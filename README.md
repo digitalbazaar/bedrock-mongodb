@@ -52,7 +52,12 @@ bedrock.start();
 
 For documentation on database configuration, see [config.js](https://github.com/digitalbazaar/bedrock-mongodb/blob/master/lib/config.js).
 
-## How It Works
+## Requirements
+
+* Linux or Mac OS X (also works on Windows with some coaxing)
+* node.js >= 0.10.x
+* npm >= 1.4.x
+* mongodb ~= 2.4.x
 
 ## Setup
 
