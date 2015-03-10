@@ -22,14 +22,20 @@ var database = require('bedrock-mongodb');
 config.mongodb.name = 'my_project_dev'; // default: bedrock_dev
 config.mongodb.host = 'localhost';      // default: localhost
 config.mongodb.port = 27017;            // default: 27017
+config.mongodb.port = 27017;            // default: 27017
+config.mongodb.username = 'my_project'; // default: bedrock
+config.mongodb.password = 'password';   // default: password
 
-// open a collection once the database is ready
+// the mongodb database 'my_project_dev' and the 'my_project' user will
+// be created on start up following a prompt for the admin user credentials
+
+// open some collections once the database is ready
 bedrock.events.on('bedrock-mongodb.ready', function(callback) {
   database.openCollections(['collection1', 'collection2'], function(err) {
     if(err) {
       return callback(err);
     }
-    // do something with the open collection
+    // do something with the open collection(s)
     database.collections.collection1.find({id: 'foo'}, function(err, result) {
       if(err) {
         return callback(err);
