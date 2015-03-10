@@ -22,7 +22,6 @@ var database = require('bedrock-mongodb');
 config.mongodb.name = 'my_project_dev'; // default: bedrock_dev
 config.mongodb.host = 'localhost';      // default: localhost
 config.mongodb.port = 27017;            // default: 27017
-config.mongodb.port = 27017;            // default: 27017
 config.mongodb.username = 'my_project'; // default: bedrock
 config.mongodb.password = 'password';   // default: password
 
