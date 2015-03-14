@@ -29,7 +29,7 @@
     "prompt": "~0.2.14"
   },
   "peerDependencies": {
-    "bedrock": "~0.3.0"
+    "bedrock": "~0.3.3"
   },
   "directories": {
     "lib": "./lib"
