@@ -2,7 +2,7 @@
   "name": "bedrock-mongodb",
   "version": "0.1.2-dev",
   "description": "Bedrock mongodb module",
-  "main": "index.js",
+  "main": "./lib/database",
   "scripts": {
     "test": "node test.js"
   },
@@ -33,6 +33,5 @@
   },
   "directories": {
     "lib": "./lib"
-  },
-  "main": "./lib/database"
+  }
 }
