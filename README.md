@@ -48,6 +48,8 @@ bedrock.events.on('bedrock-mongodb.ready', function(callback) {
 bedrock.start();
 ```
 
+Below is an example demonstrating the use of a distributed ID generator.
+
 ```js
 var database = require('bedrock-mongodb');
 
