@@ -70,7 +70,7 @@ database.getDistributedIdGenerator('mynamespace', function(err, idGenerator) {
 
 ## Configuration
 
-For documentation on database configuration, see [config.js](https://github.com/digitalbazaar/bedrock-mongodb/blob/master/lib/config.js).
+For documentation on database configuration, see [config.js](./lib/config.js).
 
 ## Requirements
 
