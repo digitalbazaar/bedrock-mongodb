@@ -1,6 +1,6 @@
 {
   "name": "bedrock-mongodb",
-  "version": "0.1.2-dev",
+  "version": "1.0.0",
   "description": "Bedrock mongodb module",
   "main": "./lib/database",
   "scripts": {
@@ -29,7 +29,7 @@
     "prompt": "~0.2.14"
   },
   "peerDependencies": {
-    "bedrock": "~0.3.3"
+    "bedrock": "^1.0.0"
   },
   "directories": {
     "lib": "./lib"
