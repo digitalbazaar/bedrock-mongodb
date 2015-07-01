@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+### Changed
+- Do not use deprecated native BSON parser by default.
+
 ## [1.0.1] - 2015-05-07
 
 ## [1.0.0] - 2015-04-08
