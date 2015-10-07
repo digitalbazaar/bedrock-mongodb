@@ -77,13 +77,14 @@ For documentation on database configuration, see [config.js](./lib/config.js).
 * Linux or Mac OS X (also works on Windows with some coaxing)
 * node.js >= 0.10.x
 * npm >= 1.4.x
-* mongodb ~= 2.4.x
+* mongodb ~= 2.6.x
+* libkrb5-dev >= 1.x.x
 
 ## Setup
 
 1. Ensure an admin user is set up on mongodb. To do so, follow the instructions
    at [mongodb.org](http://docs.mongodb.org/manual/tutorial/add-user-administrator/)
-   for your version of MongoDB. Versions 2.4 and 2.6 are currently supported.
+   for your version of MongoDB. Version 2.6 is currently supported.
 2. [optional] Tweak your project's configuration settings; see
    [Configuration](#configuration) or [Quick Examples](#quickexamples).
 
