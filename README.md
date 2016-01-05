@@ -145,6 +145,26 @@ share the same database). If an error occurs, the `callback` will be called
 with the error, otherwise, it will be called with `null` for the error and
 the identifier.
 
+## Test Mode
+### Drop Collections on Initialization
+When doing testing, it is often desirable to have empty collections at the
+beginning of test operations.  This may be accomplished by the following
+configuration parameters **IN ADDITION** to specifying the test parameter on
+the command line.  The test configuration in a project should **ALWAYS**
+specify a **UNIQUE** mongodb database.
+```
+// Always specify a unique mongodb database for testing
+bedrock.config.mongodb.name = 'my_project_test';
+bedrock.config.mongodb.host = 'localhost';
+bedrock.config.mongodb.port = 27017;
+bedrock.config.mongodb.username = 'test'; // default: bedrock
+bedrock.config.mongodb.password = 'password';
+// drop collections on initialization
+bedrock.config.mongodb.dropCollections.onInit = true;
+// if 'onInit' is specified, 'collections' must also be specified
+// if collections is an empty array, ALL collections will be dropped
+bedrock.config.mongodb.dropCollections.collections = [];
+```
 
 [bedrock]: https://github.com/digitalbazaar/bedrock
 [mongodb-native]: http://mongodb.github.io/node-mongodb-native/2.0/
