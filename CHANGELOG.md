@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [1.1.0] - 2016-02-05
+
+### Added
+- Support MongoDB >= 3.0.
+- Add authentication config option.
+
+### Changed
+- Removed support for MongoDB 2.4 from the README, but no technical change
+  prohibits its use.
+
 ## [1.0.2] - 2015-07-01
 
 ### Changed
@@ -21,7 +31,8 @@
 
 - See git history for changes.
 
-[Unreleased]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.0.2...HEAD
+[Unreleased]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.0.2...1.1.0
 [1.0.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/0.1.1...1.0.0
