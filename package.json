@@ -1,6 +1,6 @@
 {
   "name": "bedrock-mongodb",
-  "version": "1.1.1-dev",
+  "version": "2.0.0-dev",
   "description": "Bedrock mongodb module",
   "main": "./lib/database",
   "scripts": {
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
     "async": "^1.4.2",
+    "bedrock": "^1.0.0",
     "mongodb": "~2.0.15",
     "prompt": "~0.2.14"
   },

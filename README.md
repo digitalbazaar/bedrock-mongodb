@@ -3,6 +3,10 @@
 A [bedrock][] module that creates a simple MongoDB database and provides an
 easy API for creating and working with its collections.
 
+## Requirements
+
+- npm v3+
+
 ## Quick Examples
 
 ```
