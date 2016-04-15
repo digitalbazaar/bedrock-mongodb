@@ -25,7 +25,6 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
     "async": "^1.4.2",
-    "bedrock": "^1.0.0",
     "mongodb": "~2.0.15",
     "prompt": "~0.2.14"
   },
