@@ -32,6 +32,9 @@ bedrock.config.mongodb.password = 'password';   // default: password
 // the mongodb database 'my_project_dev' and the 'my_project' user will
 // be created on start up following a prompt for the admin user credentials
 
+// alternatively, use `mongodb` URL format:
+bedrock.config.mongodb.url = 'mongodb://localhost:27017/my_project_dev';
+
 // open some collections once the database is ready
 bedrock.events.on('bedrock-mongodb.ready', function(callback) {
   database.openCollections(['collection1', 'collection2'], function(err) {
@@ -79,7 +82,7 @@ For documentation on database configuration, see [config.js](./lib/config.js).
 ## Requirements
 
 * Linux or Mac OS X (also works on Windows with some coaxing)
-* node.js >= 0.10.x
+* node.js >= 4.x.x
 * npm >= 1.4.x
 * mongodb ~= 2.6.x
 * libkrb5-dev >= 1.x.x

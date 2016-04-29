@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [2.1.0] - 2016-04-29
+
+### Added
+- Add feature to allow mongodb `url` in configuration.
+
+### Changed
+- Deprecate `mongodb.options`.
+- Replace deprecated `safe` mongodb option with `w: 'majority'`.
+- Support only node >= 4.x.x.
+
 ## [2.0.1] - 2016-03-15
 
 ### Changed
@@ -41,7 +51,8 @@
 
 - See git history for changes.
 
-[Unreleased]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.0.1...HEAD
+[Unreleased]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.1.0...HEAD
+[2.1.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.0.1...2.1.0
 [2.0.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.1.0...2.0.0
 [1.1.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.0.2...1.1.0
