@@ -1,6 +1,6 @@
 {
   "name": "bedrock-mongodb",
-  "version": "2.1.2-dev",
+  "version": "2.1.2",
   "description": "Bedrock mongodb module",
   "main": "./lib/database",
   "scripts": {

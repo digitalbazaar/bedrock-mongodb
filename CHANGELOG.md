@@ -2,7 +2,15 @@
 
 ## [Unreleased]
 
+## [2.1.2] - 2016-05-04
+
+### Fixed
+- Set proper defaults when parsing mongodb URL.
+
 ## [2.1.1] - 2016-05-02
+
+### Fixed
+- Fix configuration typo.
 
 ## [2.1.0] - 2016-04-29
 
@@ -53,7 +61,8 @@
 
 - See git history for changes.
 
-[Unreleased]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.1.1...HEAD
+[Unreleased]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.1.2...HEAD
+[2.1.2]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.1.1...2.1.2
 [2.1.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.1.0...2.1.1
 [2.1.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.0.1...2.1.0
 [2.0.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.0.0...2.0.1
