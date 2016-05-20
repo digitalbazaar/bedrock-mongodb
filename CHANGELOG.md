@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [2.1.3] - 2016-05-20
+
+### Fixed
+- Ensure database is set when using a mongodb URL.
+
 ## [2.1.2] - 2016-05-04
 
 ### Fixed
@@ -60,15 +65,3 @@
 ## 0.1.0 - 2015-02-23
 
 - See git history for changes.
-
-[Unreleased]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.1.2...HEAD
-[2.1.2]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.1.1...2.1.2
-[2.1.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.1.0...2.1.1
-[2.1.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.0.1...2.1.0
-[2.0.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/2.0.0...2.0.1
-[2.0.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.1.0...2.0.0
-[1.1.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.0.2...1.1.0
-[1.0.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.0.1...1.0.2
-[1.0.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/1.0.0...1.0.1
-[1.0.0]: https://github.com/digitalbazaar/bedrock-mongodb/compare/0.1.1...1.0.0
-[0.1.1]: https://github.com/digitalbazaar/bedrock-mongodb/compare/0.1.0...0.1.1
