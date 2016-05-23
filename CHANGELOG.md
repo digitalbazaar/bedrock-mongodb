@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [2.1.4] - 2016-05-23
+
+### Fixed
+- Ensure I/O events can be processed when waiting for ID
+  components in ID generator to load.
+
 ## [2.1.3] - 2016-05-20
 
 ### Fixed
