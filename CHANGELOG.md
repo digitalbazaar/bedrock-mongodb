@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Changed
+- Add `config.mongodb.local.enable` option to enable using a local database.
+  Disabled by default. In a remote replicated database setup, the local
+  database needs to actually be local. Running a full mongodb node is
+  heavyweight for the purposes of this module. For the time being, if the local
+  database is disabled, every startup of a process will get a new globalId.  A
+  future update will introduce a more lightweight localId storage option.
+
 ## 2.1.4 - 2016-05-23
 
 ### Fixed

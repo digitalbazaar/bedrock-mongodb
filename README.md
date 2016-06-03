@@ -35,6 +35,11 @@ bedrock.config.mongodb.password = 'password';   // default: password
 // alternatively, use `mongodb` URL format:
 bedrock.config.mongodb.url = 'mongodb://localhost:27017/my_project_dev';
 
+// enable local collection if a local database is available
+bedrock.config.mongodb.local.enable = true; // default: false
+// local database has similar options to main one
+// see lib/config.js for details
+
 // open some collections once the database is ready
 bedrock.events.on('bedrock-mongodb.ready', function(callback) {
   database.openCollections(['collection1', 'collection2'], function(err) {
