@@ -1,29 +1,37 @@
 # bedrock-mongodb ChangeLog
 
-## [Unreleased]
+## Unreleased
 
-## [2.1.4] - 2016-05-23
+### Changed
+- Add `config.mongodb.local.enable` option to enable using a local database.
+  Disabled by default. In a remote replicated database setup, the local
+  database needs to actually be local. Running a full mongodb node is
+  heavyweight for the purposes of this module. For the time being, if the local
+  database is disabled, every startup of a process will get a new globalId.  A
+  future update will introduce a more lightweight localId storage option.
+
+## 2.1.4 - 2016-05-23
 
 ### Fixed
 - Ensure I/O events can be processed when waiting for ID
   components in ID generator to load.
 
-## [2.1.3] - 2016-05-20
+## 2.1.3 - 2016-05-20
 
 ### Fixed
 - Ensure database is set when using a mongodb URL.
 
-## [2.1.2] - 2016-05-04
+## 2.1.2 - 2016-05-04
 
 ### Fixed
 - Set proper defaults when parsing mongodb URL.
 
-## [2.1.1] - 2016-05-02
+## 2.1.1 - 2016-05-02
 
 ### Fixed
 - Fix configuration typo.
 
-## [2.1.0] - 2016-04-29
+## 2.1.0 - 2016-04-29
 
 ### Added
 - Add feature to allow mongodb `url` in configuration.
@@ -33,17 +41,17 @@
 - Replace deprecated `safe` mongodb option with `w: 'majority'`.
 - Support only node >= 4.x.x.
 
-## [2.0.1] - 2016-03-15
+## 2.0.1 - 2016-03-15
 
 ### Changed
 - Update bedrock dependencies.
 
-## [2.0.0] - 2016-03-02
+## 2.0.0 - 2016-03-02
 
 ### Changed
 - Update deps for npm v3 compatibility.
 
-## [1.1.0] - 2016-02-05
+## 1.1.0 - 2016-02-05
 
 ### Added
 - Support MongoDB >= 3.0.
@@ -53,16 +61,16 @@
 - Removed support for MongoDB 2.4 from the README, but no technical change
   prohibits its use.
 
-## [1.0.2] - 2015-07-01
+## 1.0.2 - 2015-07-01
 
 ### Changed
 - Do not use deprecated native BSON parser by default.
 
-## [1.0.1] - 2015-05-07
+## 1.0.1 - 2015-05-07
 
-## [1.0.0] - 2015-04-08
+## 1.0.0 - 2015-04-08
 
-## [0.1.1] - 2015-03-06
+## 0.1.1 - 2015-03-06
 
 ### Fixed
 - Fix duplicate key error when adding users to the local collection in
