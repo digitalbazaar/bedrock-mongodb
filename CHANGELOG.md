@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.0.0 - 2016-06-07
+
 ### Changed
 - Add `config.mongodb.local.enable` option to enable using a local database.
   Disabled by default. In a remote replicated database setup, the local
