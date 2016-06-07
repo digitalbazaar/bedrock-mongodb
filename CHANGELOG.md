@@ -9,6 +9,7 @@
   heavyweight for the purposes of this module. For the time being, if the local
   database is disabled, every startup of a process will get a new globalId.  A
   future update will introduce a more lightweight localId storage option.
+- Update mongodb driver dependency.
 
 ## 2.1.4 - 2016-05-23
 
