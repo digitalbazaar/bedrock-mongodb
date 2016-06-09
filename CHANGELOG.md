@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.0.1 - 2016-06-09
+
 ### Changed
 - Init errors now wrapped in a BedrockError.
 - Handle new MongoDB driver db.authenticate errors. No longer returns an error
