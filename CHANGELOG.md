@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+- Init errors now wrapped in a BedrockError.
+- Handle new MongoDB driver db.authenticate errors. No longer returns an error
+  code so also check for an error "message" field of "could not authenticate".
+
 ## 3.0.0 - 2016-06-07
 
 ### Changed
