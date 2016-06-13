@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.0.2 - 2016-06-13
+
+### Fixed
+- Recursively encode array elements when building a database update.
+
 ## 3.0.1 - 2016-06-09
 
 ### Changed
