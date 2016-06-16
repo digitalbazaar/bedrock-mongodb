@@ -1,6 +1,9 @@
 # bedrock-mongodb ChangeLog
 
-## Unreleased
+## 3.0.3 - 2016-06-16
+
+### Fixed
+- Ignore collection not found error when dropping collections.
 
 ## 3.0.2 - 2016-06-13
 
