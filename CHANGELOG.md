@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 3.1.0 - 2016-09-01
+
+### Added
+- Add \_migration API which can be used for document transformation.
+
 ## 3.0.3 - 2016-06-16
 
 ### Fixed
