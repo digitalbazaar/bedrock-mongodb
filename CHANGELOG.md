@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 3.2.0 - 2016-09-12
+
+### Added
+- Auto-detection for mongoDB authentication and an override config flag.
+
 ## 3.1.0 - 2016-09-01
 
 ### Added
