@@ -1,5 +1,7 @@
 # bedrock-mongodb ChangeLog
 
+## 3.2.1 - 2016-10-05
+
 ### Fixed
 - Skip more initialization when !config.local.enable.
 
