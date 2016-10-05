@@ -1,5 +1,8 @@
 # bedrock-mongodb ChangeLog
 
+### Fixed
+- Skip more initialization when !config.local.enable.
+
 ### Added
 - Additional logging and error wrappers.
 
