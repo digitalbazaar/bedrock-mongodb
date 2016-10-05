@@ -1,5 +1,8 @@
 # bedrock-mongodb ChangeLog
 
+### Added
+- Additional logging and error wrappers.
+
 ## 3.2.0 - 2016-09-12
 
 ### Added
