@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 3.2.2 - 2016-11-07
+
+### Changed
+- Replace deprecated MongoDB API `ensureIndex` with `createIndex`.
+
 ## 3.2.1 - 2016-10-05
 
 ### Fixed
