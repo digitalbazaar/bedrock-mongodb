@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 3.2.3 - 2016-12-29
+
+### Fixed
+- Fix bug when checking config.mongodb.local.
+
 ## 3.2.2 - 2016-11-07
 
 ### Changed
