@@ -26,7 +26,7 @@
   "dependencies": {
     "async": "^2.5.0",
     "lodash": "^4.15.0",
-    "mongodb": "~2.1.21",
+    "mongodb": "~2.2.31",
     "mongodb-uri": "^0.9.7",
     "progress": "~1.1.8",
     "prompt": "~0.2.14"
