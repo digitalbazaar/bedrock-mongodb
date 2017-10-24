@@ -1,5 +1,12 @@
 # bedrock-mongodb ChangeLog
 
+## 4.0.0 - 2017-10-24
+
+### Changed
+- Update Mongo DB driver to v2.2.x.
+- Use ES6 syntax.
+- Update `async` dependency to v2.x.
+
 ## 3.2.3 - 2016-12-29
 
 ### Fixed
