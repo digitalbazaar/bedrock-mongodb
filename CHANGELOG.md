@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 4.0.1 - 2017-10-27
+
+### Fixed
+- Fix index key pattern (use `1` not `true`).
+
 ## 4.0.0 - 2017-10-24
 
 ### Changed
