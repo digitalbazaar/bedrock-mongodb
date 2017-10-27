@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 4.0.2 - 2017-10-27
+
+### Fixed
+- Remove erroneous passing of write options to collection creation.
+
 ## 4.0.1 - 2017-10-27
 
 ### Fixed
