@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 4.0.3 2018-01-26
+
+### Fixed
+- Fix calls to `logger.debug`.
+
 ## 4.0.2 - 2017-10-27
 
 ### Fixed
