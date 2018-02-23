@@ -87,7 +87,7 @@ For documentation on database configuration, see [config.js](./lib/config.js).
 ## Requirements
 
 * Linux or Mac OS X (also works on Windows with some coaxing)
-* node.js >= 4.x.x
+* node.js >= 6.x.x
 * npm >= 1.4.x
 * mongodb ~= 3.x
 * libkrb5-dev >= 1.x.x
