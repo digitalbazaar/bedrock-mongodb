@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+### Added
+- Ability to check the server version via the semver-style version string
+  located in the `bedrock.config.mongodb.requirements.serverVersion` config
+  key.
+
 ## 5.0.1 2018-02-24
 
 ### Fixed
