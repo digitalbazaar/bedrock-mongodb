@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 5.0.1 2018-02-24
+
+### Fixed
+- Fix release tag.
+
 ## 5.0.0 2018-02-24
 
 ### Changed
