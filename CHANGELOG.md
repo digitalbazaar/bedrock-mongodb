@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 5.0.0 2018-02-24
+
+### Changed
+- **BREAKING** Use 256-bit `blake2b` for `database.hash`.
+
 ## 4.0.3 2018-01-26
 
 ### Fixed
