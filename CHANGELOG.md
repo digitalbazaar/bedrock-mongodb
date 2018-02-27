@@ -1,5 +1,9 @@
 # bedrock-mongodb ChangeLog
 
+### Changed
+- Use `chloride` to provide blake2b implementation; it is a faster
+  and better maintained implementation.
+
 ## 5.1.0 2018-02-24
 
 ### Added

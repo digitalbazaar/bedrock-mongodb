@@ -22,7 +22,7 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
     "async": "^2.5.0",
-    "blake2": "^1.4.0",
+    "chloride": "digitalbazaar/chloride#genericHash",
     "lodash": "^4.15.0",
     "mongodb": "~2.2.31",
     "mongodb-uri": "^0.9.7",
