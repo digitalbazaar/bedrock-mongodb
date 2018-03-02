@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 5.1.2 2018-03-02
+
+### Fixed
+- Handle duplicate distributed ID keys on init.
+
 ## 5.1.1 2018-02-27
 
 ### Changed
