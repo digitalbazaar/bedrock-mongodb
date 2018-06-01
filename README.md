@@ -102,6 +102,10 @@ For documentation on database configuration, see [config.js](./lib/config.js).
 
 ## API
 
+### driver
+
+The native driver is exposed as the `mongo` property.
+
 ### collections
 
 An object whose keys are the names of the collections that have been
