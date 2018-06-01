@@ -1,5 +1,8 @@
 # bedrock-mongodb ChangeLog
 
+### Added
+- Expose native driver as the `mongo` property.
+
 ## 5.1.2 2018-03-02
 
 ### Fixed
