@@ -1,5 +1,8 @@
 # bedrock-mongodb ChangeLog
 
+### Added
+- Add `createGridFSBucket` API.
+
 ## 5.1.2 2018-03-02
 
 ### Fixed
