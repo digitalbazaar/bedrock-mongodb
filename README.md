@@ -117,6 +117,12 @@ that match the collection names and values that are instances of
 [mongodb-native][]
 [Collection](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html).
 
+### createGridFSBucket(options, callback)
+
+Creates and returns a new `GridFSBucket` from the native driver. Options are
+the same as for `GridFSBucket`. The current client is used and the
+`writeConcern` option defaults to the `writeOptions` config value.
+
 ### getDistributedIdGenerator(namespace, callback)
 
 Gets the `DistributedIdGenerator` for the given namespace. If the
