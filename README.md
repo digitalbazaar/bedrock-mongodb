@@ -117,7 +117,7 @@ that match the collection names and values that are instances of
 [mongodb-native][]
 [Collection](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html).
 
-### createGridFSBucket(options, callback)
+### createGridFSBucket(options)
 
 Creates and returns a new `GridFSBucket` from the native driver. Options are
 the same as for `GridFSBucket`. The current client is used and the
