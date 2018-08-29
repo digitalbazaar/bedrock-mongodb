@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
+    "assert-plus": "^1.0.0",
     "async": "^2.5.0",
     "chloride": "digitalbazaar/chloride#genericHash",
     "lodash": "^4.15.0",

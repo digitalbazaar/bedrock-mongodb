@@ -1,5 +1,8 @@
 # bedrock-mongodb ChangeLog
 
+## 5.3.0 TBD
+- callbackify createIndexes API and add validation on options parameter.
+
 ## 5.2.0 2018-07-05
 
 ### Added
