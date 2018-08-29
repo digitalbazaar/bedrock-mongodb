@@ -1,5 +1,9 @@
 # bedrock-mongodb ChangeLog
 
+## 5.4.0 2018-08-29
+- Rollback callbackify createIndexes due to incompatibilities with
+  `async.waterfall`.
+
 ## 5.3.0 2018-08-29
 - callbackify createIndexes API and add validation on options parameter.
 
