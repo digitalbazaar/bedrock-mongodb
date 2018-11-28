@@ -22,13 +22,13 @@
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
     "async": "^2.5.0",
-    "chloride": "digitalbazaar/chloride#genericHash",
     "lodash": "^4.15.0",
     "mongodb": "~2.2.31",
     "mongodb-uri": "^0.9.7",
     "progress": "~1.1.8",
     "prompt": "~0.2.14",
-    "semver": "^5.5.0"
+    "semver": "^5.5.0",
+    "sodium-native": "^2.2.3"
   },
   "peerDependencies": {
     "bedrock": "^1.11.0"
