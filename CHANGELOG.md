@@ -1,46 +1,51 @@
 # bedrock-mongodb ChangeLog
 
-## 5.4.0 2018-08-29
+## 5.5.0 - TBD
+
+### Changed
+- Replace unmaintained `chloride` module with `sodium-native`.
+
+## 5.4.0 - 2018-08-29
 - Rollback callbackify createIndexes due to incompatibilities with
   `async.waterfall`.
 
-## 5.3.0 2018-08-29
+## 5.3.0 - 2018-08-29
 - callbackify createIndexes API and add validation on options parameter.
 
-## 5.2.0 2018-07-05
+## 5.2.0 - 2018-07-05
 
 ### Added
 - Add `createGridFSBucket` API.
 
-## 5.1.2 2018-03-02
+## 5.1.2 - 2018-03-02
 
 ### Fixed
 - Handle duplicate distributed ID keys on init.
 
-## 5.1.1 2018-02-27
+## 5.1.1 - 2018-02-27
 
 ### Changed
 - Use `chloride` to provide blake2b implementation; it is a faster
   and better maintained implementation.
 
-## 5.1.0 2018-02-24
+## 5.1.0 - 2018-02-24
 
 ### Added
 - Ability to check the server version via the semver-style version string
   located in the `bedrock.config.mongodb.requirements.serverVersion` config
   key.
 
-## 5.0.1 2018-02-24
+## 5.0.1 - 2018-02-24
 
 ### Fixed
 - Fix release tag.
 
-## 5.0.0 2018-02-24
+## 5.0.0 - 2018-02-24
 
 ### Changed
 - **BREAKING** Use 256-bit `blake2b` for `database.hash`.
 
-## 4.0.3 2018-01-26
+## 4.0.3 - 2018-01-26
 
 ### Fixed
 - Fix calls to `logger.debug`.
