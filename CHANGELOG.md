@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 5.5.0 - TBD
+## 5.5.0 - 2018-11-28
 
 ### Changed
 - Replace unmaintained `chloride` module with `sodium-native`.
