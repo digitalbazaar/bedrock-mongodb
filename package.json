@@ -27,8 +27,7 @@
     "mongodb-uri": "^0.9.7",
     "progress": "~1.1.8",
     "prompt": "~0.2.14",
-    "semver": "^5.5.0",
-    "sodium-native": "^2.2.3"
+    "semver": "^5.5.0"
   },
   "peerDependencies": {
     "bedrock": "^1.11.0"
