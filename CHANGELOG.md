@@ -1,5 +1,14 @@
 # bedrock-mongodb ChangeLog
 
+## 6.0.0 - 2019-09-03
+
+### Changed
+- **BREAKING**: The `hash` API now uses Node crypto's SHA256 implementation.
+  This eliminates the `sodium-native` native dependency. Developers should
+  use the v6 release on new projects or projects with no persistent data.
+  Hashes on existing data generated with v5 are not compatible and there is no
+  upgrade mechanism.
+
 ## 5.5.0 - 2018-11-28
 
 ### Changed
@@ -43,7 +52,7 @@
 ## 5.0.0 - 2018-02-24
 
 ### Changed
-- **BREAKING** Use 256-bit `blake2b` for `database.hash`.
+- **BREAKING**: Use 256-bit `blake2b` for `database.hash`.
 
 ## 4.0.3 - 2018-01-26
 
