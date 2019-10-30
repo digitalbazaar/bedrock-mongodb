@@ -1,5 +1,8 @@
 # bedrock-mongodb ChangeLog
 
+### Changed
+- Update to latest bedrock events API.
+
 ## 6.0.0 - 2019-09-03
 
 ### Changed
