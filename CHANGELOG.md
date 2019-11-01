@@ -2,6 +2,7 @@
 
 ### Changed
 - Update to latest bedrock events API.
+- Update to latest bedrock runOnce API.
 
 ## 6.0.0 - 2019-09-03
 
