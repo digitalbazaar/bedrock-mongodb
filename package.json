@@ -41,5 +41,8 @@
   },
   "scripts": {
     "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=8"
   }
 }
