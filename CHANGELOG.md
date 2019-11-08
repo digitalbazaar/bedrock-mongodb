@@ -1,5 +1,8 @@
 # bedrock-mongodb ChangeLog
 
+### Changed
+- Update max bedrock dependency to 3.x.
+
 ## 6.0.1 - 2019-11-08
 
 ### Changed

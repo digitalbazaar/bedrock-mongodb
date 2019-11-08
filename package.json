@@ -30,7 +30,7 @@
     "semver": "^6.3.0"
   },
   "peerDependencies": {
-    "bedrock": "1.11.0 - 2.x"
+    "bedrock": "1.11.0 - 3.x"
   },
   "directories": {
     "lib": "./lib"
