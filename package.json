@@ -21,13 +21,13 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
-    "async": "^2.5.0",
-    "lodash": "^4.15.0",
+    "async": "^2.6.3",
+    "lodash": "^4.17.15",
     "mongodb": "~2.2.31",
     "mongodb-uri": "^0.9.7",
     "progress": "~1.1.8",
     "prompt": "~0.2.14",
-    "semver": "^5.5.0"
+    "semver": "^6.3.0"
   },
   "peerDependencies": {
     "bedrock": "1.11.0 - 2.x"
@@ -36,7 +36,10 @@
     "lib": "./lib"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-config-digitalbazaar": "^2.0.0"
+    "eslint": "^6.6.0",
+    "eslint-config-digitalbazaar": "^2.0.1"
+  },
+  "scripts": {
+    "lint": "eslint ."
   }
 }
