@@ -1,0 +1,27 @@
+{
+  "name": "bedrock-mongodb-test",
+  "version": "0.0.1-0",
+  "private": true,
+  "scripts": {
+    "test": "node --preserve-symlinks test.js test",
+    "coverage": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary npm test",
+    "coverage-ci": "cross-env NODE_ENV=test nyc --reporter=text-lcov npm test > coverage.lcov",
+    "coverage-report": "nyc report"
+  },
+  "dependencies": {
+    "bedrock": "^3.0.0",
+    "bedrock-mongodb": "file:..",
+    "bedrock-test": "^5.0.0",
+    "cross-env": "^7.0.2",
+    "nyc": "^15.0.1"
+  },
+  "nyc": {
+    "excludeNodeModules": false,
+    "include": [
+      "node_modules/bedrock-mongodb/**"
+    ],
+    "exclude": [
+      "node_modules/bedrock-mongodb/node_modules/**"
+    ]
+  }
+}

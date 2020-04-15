@@ -3,6 +3,9 @@
   "version": "6.0.3-0",
   "description": "Bedrock mongodb module",
   "main": "lib",
+  "scripts": {
+    "lint": "eslint lib test"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbazaar/bedrock-mongodb"
@@ -38,9 +41,6 @@
   "devDependencies": {
     "eslint": "^6.6.0",
     "eslint-config-digitalbazaar": "^2.0.1"
-  },
-  "scripts": {
-    "lint": "eslint ."
   },
   "engines": {
     "node": ">=8"
