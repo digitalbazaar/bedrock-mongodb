@@ -4,7 +4,9 @@
   "description": "Bedrock mongodb module",
   "main": "lib",
   "scripts": {
-    "lint": "eslint lib test"
+    "lint": "eslint lib test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -30,7 +32,8 @@
     "mongodb-uri": "^0.9.7",
     "progress": "~1.1.8",
     "prompt": "~0.2.14",
-    "semver": "^6.3.0"
+    "semver": "^6.3.0",
+    "snyk": "^1.316.2"
   },
   "peerDependencies": {
     "bedrock": "1.11.0 - 3.x"
@@ -44,5 +47,6 @@
   },
   "engines": {
     "node": ">=8"
-  }
+  },
+  "snyk": true
 }
