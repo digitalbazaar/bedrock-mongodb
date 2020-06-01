@@ -12,6 +12,9 @@ config.mongodb.username = 'root';
 config.mongodb.password = 'root';
 config.mongodb.dropCollections.onInit = true;
 config.mongodb.dropCollections.collections = [];
-//config.mongodb.forceAuthentication = true;
+config.mongodb.authentcation = {
+  authMechanism: 'SCRAM-SHA-1'
+};
+config.mongodb.forceAuthentication = true;
 
 config.mocha.tests.push(path.join(__dirname, 'mocha'));
