@@ -7,8 +7,9 @@ const {config} = require('bedrock');
 const path = require('path');
 
 // MongoDB
-config.mongodb.name = 'bedrock_authn_token_test';
+config.mongodb.name = 'bedrock_mongodb_test';
 config.mongodb.dropCollections.onInit = true;
 config.mongodb.dropCollections.collections = [];
+// config.mongodb.forceAuthentication = true;
 
 config.mocha.tests.push(path.join(__dirname, 'mocha'));
