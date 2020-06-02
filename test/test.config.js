@@ -12,7 +12,7 @@ config.mongodb.username = 'root';
 config.mongodb.password = 'root';
 config.mongodb.dropCollections.onInit = true;
 config.mongodb.dropCollections.collections = [];
-config.mongodb.authentcation = {
+config.mongodb.authentication = {
   authMechanism: 'SCRAM-SHA-1'
 };
 config.mongodb.forceAuthentication = true;
