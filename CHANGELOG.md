@@ -3,29 +3,30 @@
 ## 7.0.0 -
 
 ### Changed
-- **BREAKING**: We have update to mongodb's 3.5 node driver.
-- Github actions now tests for node version 10, 12, and 14.
-- Github actions now tests mongodb versions 3.6, 4.0, and 4.2.
-- **BREAKING** autoReconnect is now false and should not be true.
-- runOnceAsync has been changed to runOnce.
-- DB now longer contains methods that Mongo 3.5 client specific.
-- Client now refers to a Mongo 3.5. client with an updated api.
-- Methods that now require null then callback have been set.
+- **BREAKING**: Update to `mongodb` 3.5 node driver.
+- GitHub actions now tests Node.js versions 10, 12, and 14.
+- GitHub actions now tests mongodb versions 3.6, 4.0, and 4.2.
+- **BREAKING** autoReconnect is now `false` and should not be `true`.
+- `runOnceAsync` has been changed to `runOnce`.
+- Db no longer contains methods that are Mongo 3.5 client specific.
+- Client now refers to a Mongo 3.5 client with an updated API.
+- Methods that now require `null` then callback have been set.
 - GridFSBucket now takes a Mongo 3.5 Db instance.
-- insert has been changed to `insertOne`.
-- isDatabaseError looks for a variety of Mongo Errors now.
+- `insert` has been changed to `insertOne`.
+- `isDatabaseError` looks for a variety of Mongo Errors now.
 - `_openDatabase` returns an object with a client and a db.
 - `localClient.close` has been replaced with `db.close`.
-- calls to login for authentication have been updated.
-- bedrock peerDependency has been updated to `^3.1.1`.
+- Calls to login for authentication have been updated.
+- `bedrock` peerDependency has been updated to `^3.1.1`.
 
 ### Addded
-- `useUnifiedTopology` is now true and relevant settings have been added for it.
-- `forceServerObjectId` is now set and is true by default.
-- Tests for openCollection
-- Tests for createIndex
-- Tests for collections
-- test.config.js now uses `forceAuthentication` with a username and password.
+- `useUnifiedTopology` is now `true` and relevant settings have been added for
+  it.
+- `forceServerObjectId` is now set and is `true` by default.
+- Tests for `openCollection`.
+- Tests for `createIndex`.
+- Tests for `collections`.
+- `test.config.js` now uses `forceAuthentication` with a username and password.
 
 ### Removed
 - **BREAKING**: `lib/migrations.js` has been removed.
