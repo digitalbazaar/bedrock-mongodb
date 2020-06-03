@@ -14,9 +14,9 @@
 - GridFSBucket now takes a Mongo 3.5 Db instance.
 - insert has been changed to `insertOne`.
 - isDatabaseError looks for a variety of Mongo Errors now.
-- _openDatabase returns an object with a client and a db.
-- localClient.close has been replaced with db.close.
-- calls to login for authenticated used have been updated.
+- `_openDatabase` returns an object with a client and a db.
+- `localClient.close` has been replaced with `db.close`.
+- calls to login for authentication have been updated.
 - bedrock peerDependency has been updated to `^3.1.1`.
 
 ### Addded
