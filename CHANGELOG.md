@@ -4,8 +4,11 @@
 
 ### Changed
 - **BREAKING**: Update to `mongodb` 3.5 node driver.
+- **BREAKING**: Set default server version requirement to ">=4.2".
+  - This requirement can be adjusted with the
+    `config.mongodb.requirements.serverVersion` config value.
 - GitHub actions now tests Node.js versions 10, 12, and 14.
-- GitHub actions now tests mongodb versions 3.6, 4.0, and 4.2.
+- GitHub actions now tests mongodb version 4.2.
 - **BREAKING** autoReconnect is now `false` and should not be `true`.
 - `runOnceAsync` has been changed to `runOnce`.
 - Db no longer contains methods that are Mongo 3.5 client specific.
