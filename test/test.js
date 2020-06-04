@@ -5,4 +5,4 @@ const bedrock = require('bedrock');
 require('bedrock-mongodb');
 
 require('bedrock-test');
-bedrock.start();
+bedrock.start().catch(err => console.error(err));
