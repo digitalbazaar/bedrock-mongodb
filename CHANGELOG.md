@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 7.0.0 -
+## 7.0.0 - 2020-06-05
 
 ### Changed
 - **BREAKING**: Update to `mongodb` 3.5 node driver.
