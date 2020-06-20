@@ -7,11 +7,14 @@ const {config} = require('bedrock');
 const path = require('path');
 
 // MongoDB
-config.mongodb.name = 'bedrock_mongodb_test';
-config.mongodb.host = 'localhost';
-config.mongodb.port = 27017;
-config.mongodb.username = 'test';
-config.mongodb.password = 'test';
+config.mongodb.name = 'test';
+config.mongodb.host = process.env.mongo_host;
+config.mongodb.port = process.env.mongo_port;
+config.mongodb.username = process.env.mongo_username;
+config.mongodb.password = process.env.mongo_password;
+config.mongodb.connectOptions.replicaSet = process.env.mongo_replica;
+config.mongodb.connectOptions.ssl = true;
+//config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;
 config.mongodb.dropCollections.collections = [];
 /**
@@ -22,3 +25,4 @@ config.mongodb.authentication = {
 config.mongodb.forceAuthentication = true;
 
 config.mocha.tests.push(path.join(__dirname, 'mocha'));
+console.log('mongo config', config.mongodb);
