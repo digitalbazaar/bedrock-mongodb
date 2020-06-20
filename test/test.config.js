@@ -8,6 +8,8 @@ const path = require('path');
 
 // MongoDB
 config.mongodb.name = 'bedrock_mongodb_test';
+config.mongodb.host = 'localhost';
+config.mongodb.port = 27017;
 config.mongodb.username = 'test';
 config.mongodb.password = 'test';
 config.mongodb.dropCollections.onInit = true;
