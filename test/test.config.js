@@ -8,15 +8,18 @@ const path = require('path');
 
 // MongoDB
 config.mongodb.name = 'test-connectOptions';
-config.mongodb.host = process.env.mongo_host;
-config.mongodb.port = process.env.mongo_port;
+config.mongodb.host = process.env.mongo_host || 'localhost';
+config.mongodb.port = process.env.mongo_port || 27017;
 config.mongodb.connectOptions.replicaSet = process.env.mongo_replica;
-config.mongodb.connectOptions.ssl = true;
-config.mongodb.connectOptions.auth = {
-  user: process.env.mongo_username,
-  password: process.env.mongo_password
-};
-config.mongodb.connectOptions.authSource = 'admin';
+if(process.env.mongo_username && process.env.mongo_password) {
+  const {connectOptions} = config.mongodb;
+  connectOptions.ssl = true;
+  connectOptions.auth = {
+    user: process.env.mongo_username || 'admin',
+    password: process.env.mongo_password || 'admin'
+  };
+  connectOptions.authSource = process.env.mongo_authdb;
+}
 //config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;
 config.mongodb.dropCollections.collections = [];
@@ -28,4 +31,3 @@ config.mongodb.authentication = {
 config.mongodb.forceAuthentication = true;
 
 config.mocha.tests.push(path.join(__dirname, 'mocha'));
-console.log('mongo config', config.mongodb);
