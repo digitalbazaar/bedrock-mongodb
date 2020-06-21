@@ -60,29 +60,29 @@ bedrock.events.on('bedrock-mongodb.ready', function(callback) {
 bedrock.start();
 ```
 
-Below is an example demonstrating the use of a distributed ID generator.
-
-```js
-var database = require('bedrock-mongodb');
-
-database.getDistributedIdGenerator('mynamespace', function(err, idGenerator) {
-  if(err) {
-    console.error('Error', err);
-    return;
-  }
-  idGenerator.generateId(function(err, id) {
-    if(err) {
-      console.error('Error', err);
-      return;
-    }
-    console.log('ID generated', identifier);
-  });
-});
-```
-
 ## Configuration
 
 For documentation on database configuration, see [config.js](./lib/config.js).
+
+### Connecting and Authenticating
+MongoDB's documentation offers tons of great examples on how to authenticate
+using a myriad amount of connection strings.
+[Mongo Node 3.5 Driver connect docs](http://mongodb.github.io/node-mongodb-native/3.5/tutorials/connect/)
+[Mongo Node 3.5 Driver atlas docs](https://docs.mongodb.com/drivers/node#connect-to-mongodb-atlas)
+
+You can also connect to access-enabled mongo servers using some small changes to the
+`config.mongodb.connectOptions`:
+```js
+const {connectOptions} = bedrock.mongodb;
+// this optional and only required if connecting to a replicaSet
+connectOptions.replicaSet = process.env.mongo_replicaSet;
+// if you use srv in your connection string you do not need to set ssl
+connectOptions.ssl = true,
+// this is new and should be user over username and password
+connectOptions.auth = { user: process.env.mongo_user, password: process.env.mongo_password },
+// this was previously call authDB
+connectOptions.authSource: process.env.mongo_authdb || 'admin'
+```
 
 ## Requirements
 
@@ -96,7 +96,7 @@ For documentation on database configuration, see [config.js](./lib/config.js).
 
 1. Ensure an admin user is set up on mongodb. To do so, follow the instructions
    at [mongodb.org](http://docs.mongodb.org/manual/tutorial/add-user-administrator/)
-   for your version of MongoDB. Version 3.x is currently supported.
+   for your version of MongoDB. Version 4.2.x is currently supported.
 2. [optional] Tweak your project's configuration settings; see
    [Configuration](#configuration) or [Quick Examples](#quickexamples).
 
