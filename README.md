@@ -66,7 +66,7 @@ For documentation on database configuration, see [config.js](./lib/config.js).
 
 ### Connecting and Authenticating
 MongoDB's documentation offers tons of great examples on how to authenticate
-using a myriad amount of connection strings.
+using a myriad number of connection strings.
 [Mongo Node 3.5 Driver connect docs](http://mongodb.github.io/node-mongodb-native/3.5/tutorials/connect/)
 [Mongo Node 3.5 Driver atlas docs](https://docs.mongodb.com/drivers/node#connect-to-mongodb-atlas)
 
