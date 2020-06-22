@@ -80,7 +80,7 @@ connectOptions.replicaSet = process.env.mongo_replicaSet;
 connectOptions.ssl = true,
 // this is new and should be user over username and password
 connectOptions.auth = { user: process.env.mongo_user, password: process.env.mongo_password },
-// this was previously call authDB
+// the `authSource` option replaces the older `authDB` option
 connectOptions.authSource: process.env.mongo_authdb || 'admin'
 ```
 
