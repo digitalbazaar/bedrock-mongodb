@@ -8,17 +8,17 @@ const path = require('path');
 
 // MongoDB
 config.mongodb.name = 'test-connectOptions';
-config.mongodb.host = process.env.mongo_host || 'localhost';
-config.mongodb.port = process.env.mongo_port || 27017;
-config.mongodb.connectOptions.replicaSet = process.env.mongo_replica;
-if(process.env.mongo_username && process.env.mongo_password) {
+config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
+config.mongodb.port = process.env.MONGODB_PORT || 27017;
+config.mongodb.connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
+if(process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD) {
   const {connectOptions} = config.mongodb;
   connectOptions.ssl = true;
   connectOptions.auth = {
-    user: process.env.mongo_username || 'admin',
-    password: process.env.mongo_password || 'admin'
+    user: process.env.MONGODB_USERNAME || 'admin',
+    password: process.env.MONGODB_PASSWORD || 'admin'
   };
-  connectOptions.authSource = process.env.mongo_authdb;
+  connectOptions.authSource = process.env.MONGODB_AUTHSOURCE || 'admin';
 }
 //config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;
