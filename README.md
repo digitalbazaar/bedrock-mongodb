@@ -76,7 +76,7 @@ You can also connect to access-enabled mongo servers using some small changes to
 const {connectOptions} = bedrock.mongodb;
 // this optional and only required if connecting to a replicaSet
 connectOptions.replicaSet = process.env.mongo_replicaSet;
-// if you use srv in your connection string you do not need to set ssl
+// you must set `ssl` unless `srv` is present in your connection string (in which case, don't set it)
 connectOptions.ssl = true,
 // this is new and should be user over username and password
 connectOptions.auth = { user: process.env.mongo_user, password: process.env.mongo_password },
