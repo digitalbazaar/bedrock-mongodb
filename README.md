@@ -78,7 +78,7 @@ const {connectOptions} = bedrock.mongodb;
 connectOptions.replicaSet = process.env.mongo_replicaSet;
 // you must set `ssl` unless `srv` is present in your connection string (in which case, don't set it)
 connectOptions.ssl = true,
-// this is new and should be user over username and password
+// `auth` should now be used instead of older options `username` and `password`
 connectOptions.auth = { user: process.env.mongo_user, password: process.env.mongo_password },
 // the `authSource` option replaces the older `authDB` option
 connectOptions.authSource: process.env.mongo_authdb || 'admin'
