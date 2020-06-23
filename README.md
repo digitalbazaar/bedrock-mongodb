@@ -83,7 +83,7 @@ const {connectOptions} = config.mongodb;
 connectOptions.replicaSet = 'my_provider_replica_set';
 // optional, but required in production by many providers
 connectOptions.ssl = true;
-// optional but required is your provider requires tls 
+// optional, only required if your provider requires tls 
 connectOptions.tls = true;
 // the `authSource` option replaces the older `authDB` option
 connectOptions.authSource: 'my_provider_auth_db'; 
