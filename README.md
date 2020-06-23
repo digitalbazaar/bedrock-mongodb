@@ -28,7 +28,6 @@ bedrock.config.mongodb.host = 'localhost';      // default: localhost
 bedrock.config.mongodb.port = 27017;            // default: 27017
 bedrock.config.mongodb.username = 'my_project'; // default: bedrock
 bedrock.config.mongodb.password = 'password';   // default: password
-bedrock.config.mongodb.connectOptions.authSource = 'admin'; // default: bedrock_dev
 
 // the mongodb database 'my_project_dev' and the 'my_project' user will
 // be created on start up following a prompt for the admin user credentials
@@ -68,13 +67,18 @@ For documentation on database configuration, see [config.js](./lib/config.js).
 ### Connecting and Authenticating
 MongoDB's documentation offers tons of great examples on how to authenticate
 using a myriad number of connection strings.
+
 [Mongo Node 3.5 Driver connect docs](http://mongodb.github.io/node-mongodb-native/3.5/tutorials/connect/)
+
 [Mongo Node 3.5 Driver atlas docs](https://docs.mongodb.com/drivers/node#connect-to-mongodb-atlas)
 
 You can also connect to access-enabled mongo servers using some small changes to the
 `config.mongodb.connectOptions`:
 ```js
-const {connectOptions} = bedrock.config.mongodb;
+const {config} = require('bedrock');
+config.mongodb.username = 'me';
+config.mongodb.password = 'password';
+const {connectOptions} = config.mongodb;
 // this optional and only required if connecting to a replicaSet
 connectOptions.replicaSet = 'my_provider_replica_set';
 // optional, but required in production by many providers
@@ -83,6 +87,8 @@ connectOptions.ssl = true;
 connectOptions.tls = true;
 // the `authSource` option replaces the older `authDB` option
 connectOptions.authSource: 'my_provider_auth_db'; 
+// an authSource should be specified else it will be the `mongodb.name`
+connectOptions.authSource = 'admin';
 ```
 
 ## Requirements
