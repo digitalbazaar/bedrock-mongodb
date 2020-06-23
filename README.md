@@ -86,8 +86,8 @@ connectOptions.ssl = true;
 // optional, only required if your provider requires tls 
 connectOptions.tls = true;
 // the `authSource` option replaces the older `authDB` option
-connectOptions.authSource: 'my_provider_auth_db'; 
-// an authSource should be specified else it will be the `mongodb.name`
+// it should be specified or else it will be the `mongodb.name`
+connectOptions.authSource = 'my_provider_auth_db'; 
 connectOptions.authSource = 'admin';
 ```
 
