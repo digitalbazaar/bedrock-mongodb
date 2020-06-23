@@ -5,6 +5,10 @@
 ### Changed
 - Add a check to ensure connection errors are passed to the callback.
 
+### Added
+- Added an auth object to connectOptions if config.username & password are set.
+- Added a `useNewUrlParser` option to config.
+
 ## 7.0.0 - 2020-06-05
 
 ### Changed
