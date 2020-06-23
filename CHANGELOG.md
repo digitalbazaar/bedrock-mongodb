@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 7.0.1 -
+## 7.1.0 -
 
 ### Changed
 - Add a check to ensure connection errors are passed to the callback.
