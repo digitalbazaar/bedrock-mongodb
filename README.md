@@ -28,6 +28,7 @@ bedrock.config.mongodb.host = 'localhost';      // default: localhost
 bedrock.config.mongodb.port = 27017;            // default: 27017
 bedrock.config.mongodb.username = 'my_project'; // default: bedrock
 bedrock.config.mongodb.password = 'password';   // default: password
+bedrock.config.mongodb.connectOptions.authSource = 'admin'; // default: bedrock_dev
 
 // the mongodb database 'my_project_dev' and the 'my_project' user will
 // be created on start up following a prompt for the admin user credentials
@@ -73,15 +74,15 @@ using a myriad number of connection strings.
 You can also connect to access-enabled mongo servers using some small changes to the
 `config.mongodb.connectOptions`:
 ```js
-const {connectOptions} = bedrock.mongodb;
+const {connectOptions} = bedrock.config.mongodb;
 // this optional and only required if connecting to a replicaSet
-connectOptions.replicaSet = process.env.mongo_replicaSet;
-// you must set `ssl` unless `srv` is present in your connection string (in which case, don't set it)
-connectOptions.ssl = true,
-// `auth` should now be used instead of older options `username` and `password`
-connectOptions.auth = { user: process.env.mongo_user, password: process.env.mongo_password },
+connectOptions.replicaSet = 'my_provider_replica_set';
+// optional, but required in production by many providers
+connectOptions.ssl = true;
+// optional but required is your provider requires tls 
+connectOptions.tls = true;
 // the `authSource` option replaces the older `authDB` option
-connectOptions.authSource: process.env.mongo_authdb || 'admin'
+connectOptions.authSource: 'my_provider_auth_db'; 
 ```
 
 ## Requirements
