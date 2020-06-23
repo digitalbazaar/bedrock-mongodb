@@ -79,7 +79,7 @@ const {config} = require('bedrock');
 config.mongodb.username = 'me';
 config.mongodb.password = 'password';
 const {connectOptions} = config.mongodb;
-// this optional and only required if connecting to a replicaSet
+// optional, only required if connecting to a replicaSet
 connectOptions.replicaSet = 'my_provider_replica_set';
 // optional, but required in production by many providers
 connectOptions.ssl = true;
