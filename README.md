@@ -88,7 +88,6 @@ connectOptions.tls = true;
 // the `authSource` option replaces the older `authDB` option
 // it should be specified or else it will be the `mongodb.name`
 connectOptions.authSource = 'my_provider_auth_db'; 
-connectOptions.authSource = 'admin';
 ```
 
 ## Requirements
