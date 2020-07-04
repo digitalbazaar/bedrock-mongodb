@@ -74,7 +74,7 @@ describe('api', function() {
       try {
         await database.collections.test.insertOne(record);
         result = await database.collections.test.findOne(
-          {id: record.id}, {id: 1});
+          {id: record.id}, {projection: {_id: 0, id: 1}});
       } catch(e) {
         error = e;
       }
@@ -82,6 +82,8 @@ describe('api', function() {
       should.exist(result);
       result.should.be.an('object');
       result.id.should.equal(record.id);
+      // ensure we only get properties specified in the projection back
+      Object.keys(result).should.deep.equal(['id']);
     });
     it('should find many records in a collection', async function() {
       let error, result = null;
