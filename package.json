@@ -39,8 +39,8 @@
     "lib": "./lib"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-digitalbazaar": "^2.0.1"
+    "eslint": "^7.4.0",
+    "eslint-config-digitalbazaar": "^2.5.0"
   },
   "engines": {
     "node": ">=8"

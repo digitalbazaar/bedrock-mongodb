@@ -9,11 +9,11 @@
     "coverage-report": "nyc report"
   },
   "dependencies": {
-    "bedrock": "^3.0.0",
+    "bedrock": "^3.1.1",
     "bedrock-mongodb": "file:..",
-    "bedrock-test": "^5.0.0",
+    "bedrock-test": "^5.3.0",
     "cross-env": "^7.0.2",
-    "nyc": "^15.0.1"
+    "nyc": "^15.1.0"
   },
   "nyc": {
     "excludeNodeModules": false,
