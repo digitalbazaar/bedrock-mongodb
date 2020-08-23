@@ -89,6 +89,12 @@ connectOptions.tls = true;
 // it should be specified or else it will be the `mongodb.name`
 connectOptions.authSource = 'my_provider_auth_db'; 
 ```
+MongoDB provides [excellent docs on their connection strings](https://docs.mongodb.com/manual/reference/connection-string/)
+
+You can connect using a url by setting:
+```js
+config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=admin';
+```
 
 ## Requirements
 
