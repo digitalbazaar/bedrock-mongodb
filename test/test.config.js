@@ -10,6 +10,7 @@ const path = require('path');
 config.mongodb.name = 'bedrock_mongodb_test';
 config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
 config.mongodb.port = process.env.MONGODB_PORT || 27017;
+
 if(process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD) {
   config.mongodb.username = process.env.MONGODB_USERNAME;
   config.mongodb.password = process.env.MONGODB_PASSWORD;
