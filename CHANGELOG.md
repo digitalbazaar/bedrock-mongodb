@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 8.0.0 -
+## 8.0.0 - 2020-09-23
 
 ### Changed
 - **BREAKING**: Removed support for localCollections.
