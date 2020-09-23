@@ -4,7 +4,7 @@
   "description": "Bedrock mongodb module",
   "main": "lib",
   "scripts": {
-    "lint": "eslint lib test"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
