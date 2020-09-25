@@ -1,5 +1,11 @@
 # bedrock-mongodb ChangeLog
 
+## 8.0.1 - 2020-09-25
+
+### Fixed
+- Make handling of binary fields consistent across Mongo APIs by setting
+  `promoteBuffers: true` in the client `connectOptions`.
+
 ## 8.0.0 - 2020-09-23
 
 ### Changed
