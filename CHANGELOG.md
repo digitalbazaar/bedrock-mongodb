@@ -1,11 +1,11 @@
 # bedrock-mongodb ChangeLog
 
-## 8.0.2 -
+## 8.0.2 - 2020-10-20
 
-## Fixed
+### Fixed
 - Replace deprecated collection.s.{name, namespace} with mongo 3.5 properties.
 
-## Added
+### Changed
 - Add new debug mode to test project.
 
 ## 8.0.1 - 2020-09-25
