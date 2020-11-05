@@ -5,6 +5,7 @@ on: [push]
 jobs:
   test-node:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x]
@@ -30,6 +31,7 @@ jobs:
         CI: true
   lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     strategy:
       matrix:
         node-version: [14.x]
@@ -45,6 +47,7 @@ jobs:
   coverage:
     needs: [test-node]
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     services:
       mongodb:
         image: mongo:4.2
