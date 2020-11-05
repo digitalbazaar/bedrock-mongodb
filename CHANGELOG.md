@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 8.0.4 - 2020-11-TBD
+## 8.0.4 - 2020-11-05
 
 ### Fixed
 - Log sanitized `config.url`.
