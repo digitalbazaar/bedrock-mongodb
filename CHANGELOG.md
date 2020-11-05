@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 8.0.3 - 2020-11-05
+
+### Fixed
+- Use database sepecified in the connect string.
+
 ## 8.0.2 - 2020-10-20
 
 ### Fixed
