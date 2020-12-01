@@ -1,5 +1,11 @@
 # bedrock-mongodb ChangeLog
 
+## 8.1.0 - 2020-12-xx
+
+### Added
+- Support promises in public API calls `openCollections`
+  an `createIndexes`.
+
 ## 8.0.4 - 2020-11-05
 
 ### Fixed

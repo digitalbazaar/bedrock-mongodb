@@ -1,4 +1,6 @@
-const {promisify} = require('util');
+/*
+ * Copyright (c) 2017-2020 Digital Bazaar, Inc. All rights reserved.
+ */
 const database = require('bedrock-mongodb');
 
 describe('api', function() {
@@ -6,7 +8,7 @@ describe('api', function() {
     it('should open a collection', async function() {
       let error = null;
       try {
-        await promisify(database.openCollections)(['test']);
+        await database.openCollections(['test']);
       } catch(e) {
         error = e;
       }
@@ -17,8 +19,8 @@ describe('api', function() {
     it('should create an index', async function() {
       let error = null;
       try {
-        await promisify(database.openCollections)(['test']);
-        await promisify(database.createIndexes)([{
+        await database.openCollections(['test']);
+        await database.createIndexes([{
           collection: 'test',
           fields: {id: 1},
           options: {unique: true, background: false}
@@ -31,8 +33,8 @@ describe('api', function() {
   });
   describe('collections', function() {
     before(async function() {
-      await promisify(database.openCollections)(['test']);
-      await promisify(database.createIndexes)([{
+      await database.openCollections(['test']);
+      await database.createIndexes([{
         collection: 'test',
         fields: {id: 1},
         options: {unique: true, background: false}
