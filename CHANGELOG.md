@@ -4,7 +4,7 @@
 
 ### Added
 - Support promises in public API calls `openCollections`
-  an `createIndexes`.
+  and `createIndexes`.
 
 ## 8.0.4 - 2020-11-05
 
