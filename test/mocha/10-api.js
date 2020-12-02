@@ -14,6 +14,20 @@ describe('api', function() {
       }
       should.not.exist(error);
     });
+    it('should open several collections', async function() {
+      let error = null;
+      try {
+        await database.openCollections(['test', 'test1', 'test2', 'test3']);
+      } catch(e) {
+        error = e;
+      }
+      should.not.exist(error);
+      should.exist(database.collections);
+      database.collections.should.have.property('test');
+      database.collections.should.have.property('test1');
+      database.collections.should.have.property('test2');
+      database.collections.should.have.property('test3');
+    });
   });
   describe('createIndex', function() {
     it('should create an index', async function() {
