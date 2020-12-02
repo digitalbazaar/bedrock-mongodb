@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 8.1.0 - 2020-12-xx
+## 8.1.0 - 2020-12-01
 
 ### Added
 - Support promises in public API calls `openCollections`
