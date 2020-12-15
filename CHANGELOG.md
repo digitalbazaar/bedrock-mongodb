@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 8.1.1 - 2020-12-15
+
+### Fixed
+- Return early in openCollections API to avoid unnecessary logging.
+
 ## 8.1.0 - 2020-12-01
 
 ### Added
