@@ -1,5 +1,14 @@
 # bedrock-mongodb ChangeLog
 
+## 8.2.0 -
+
+### Removed
+- `options.mongodb`
+- Calls on `w`, `j`, `wtimeout`, and `fsync`.
+
+### Added
+- Support for mongodb's new `writeConcern` option.
+
 ## 8.1.1 - 2020-12-15
 
 ### Fixed
