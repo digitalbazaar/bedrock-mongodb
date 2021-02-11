@@ -8,6 +8,7 @@
 
 ### Added
 - Support for mongodb's new `writeConcern` option.
+- Deprecation notice to `api.writeOptions`.
 
 ## 8.1.1 - 2020-12-15
 
