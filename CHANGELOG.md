@@ -49,8 +49,8 @@
 
 ### Changed
 - **BREAKING**: Removed support for localCollections.
-- _createUser now works with mongoDB node driver 3.5.
-- Removed _addLocalUser (_createUser can now handle this).
+- `_createUser` now works with mongoDB node driver 3.5.
+- Removed `_addLocalUser` (`_createUser` can now handle this).
 - Removed local config options from `config.js`.
 - Throw if the MongoDB serverVersion is less than 2.6.
 
