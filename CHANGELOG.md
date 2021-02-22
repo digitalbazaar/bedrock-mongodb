@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 8.2.0 -
+## 8.2.0 - 2020-02-22
 
 ### Removed
 - Deprecated `config.mongodb.options`.
