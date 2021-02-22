@@ -3,7 +3,7 @@
 ## 8.2.0 -
 
 ### Removed
-- `options.mongodb`
+- Deprecated `config.mongodb.options`.
 - Calls on `w`, `j`, `wtimeout`, and `fsync`.
 
 ### Added
