@@ -1,5 +1,12 @@
 # bedrock-mongodb ChangeLog
 
+## 8.2.1 - 2021-xx-xx
+
+### Changed
+- Removed unused `distributedId` collection. This collection has not been
+  used since `idGenerator` was removed in 7.x (which was the only feature
+  that used it and it should have been removed at that time).
+
 ## 8.2.0 - 2020-02-22
 
 ### Removed
