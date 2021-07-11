@@ -59,7 +59,8 @@ describe('api', function() {
       database.collections.should.have.property('test');
     });
     it('should insertOne into a collection', async function() {
-      let error, result = null;
+      let error;
+      let result = null;
       try {
         const record = {
           id: database.hash('insert-one')
@@ -83,7 +84,8 @@ describe('api', function() {
       should.not.exist(error);
     });
     it('should findOne in a collection', async function() {
-      let error, result = null;
+      let error;
+      let result = null;
       const record = {
         id: database.hash('find-one')
       };
@@ -102,7 +104,8 @@ describe('api', function() {
       Object.keys(result).should.deep.equal(['id']);
     });
     it('should find many records in a collection', async function() {
-      let error, result = null;
+      let error;
+      let result = null;
       const one = {id: database.hash('find-many-1'), many: true};
       const two = {id: database.hash('find-many-2'), many: true};
       try {
