@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 8.3.0 - 2021-xx-xx
+## 8.3.0 - 2021-07-14
 
 ### Changed
 - Removed unused `distributedId` collection. This collection has not been
