@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 8.4.0 - 2021-07-xx
+## 8.4.0 - 2021-07-23
 
 ### Changed
 - Update peer dependencies; use bedrock@4.
