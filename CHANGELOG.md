@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 8.4.1 - TBD
+
+### Changed
+- Fix minor bug from async refactoring with `_loginUser` method.
+
 ## 8.4.0 - 2021-07-23
 
 ### Changed
