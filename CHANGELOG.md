@@ -1,9 +1,9 @@
 # bedrock-mongodb ChangeLog
 
-## 8.4.1 - TBD
+## 8.4.1 - 2021-09-08
 
-### Changed
-- Fix minor bug from async refactoring with `_loginUser` method.
+### Fixed
+- Properly handle the return value from the `_loginUser` helper function.
 
 ## 8.4.0 - 2021-07-23
 
