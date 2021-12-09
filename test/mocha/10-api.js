@@ -29,7 +29,173 @@ describe('api', function() {
       database.collections.should.have.property('test3');
     });
   });
-  describe('createIndex', function() {
+  describe('hash', function() {
+    it('should hash a key', async function() {
+      let error;
+      let result;
+      try {
+        result = await database.hash('1245678');
+      } catch(e) {
+        error = e;
+      }
+      should.not.exist(error);
+      should.exist(result);
+      result.should.be.a('string');
+    });
+    it('should throw InvalidKey error if key is not a string',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.hash({});
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(result);
+        should.exist(error);
+        error.name.should.equal('InvalidKey');
+        error.message.should.equal(
+          'Invalid key given to database hash method.');
+      });
+  });
+  describe('buildUpdate', function() {
+    const user = {
+      id: '1234',
+      name: 'user',
+      type: 'standard'
+    };
+    it('should build an update object',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.buildUpdate(user);
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('object');
+        result.should.eql(user);
+      });
+    it('should build an update object using a field',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.buildUpdate(user, 'user');
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('object');
+        result.should.eql({
+          'user.id': '1234',
+          'user.name': 'user',
+          'user.type': 'standard'
+        });
+      });
+    it('should build an update object using a field and filter option',
+      async function() {
+        let error;
+        let result;
+        const filter = function(obj) {
+          // filters out user.id
+          if(obj !== 'user.id') {
+            return obj;
+          }
+          return;
+        };
+        try {
+          result = await database.buildUpdate(
+            user, 'user', {filter});
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('object');
+        result.should.eql({
+          'user.name': 'user',
+          'user.type': 'standard'
+        });
+      });
+    it('should build an update object using an exclude option',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.buildUpdate(user, {exclude: ['id']});
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('object');
+        result.should.eql({
+          name: 'user',
+          type: 'standard'
+        });
+      });
+    it('should build an update object using a field and include option',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.buildUpdate(
+            user, 'user', {include: ['user.id']});
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('object');
+        result.should.eql({
+          'user.id': '1234'
+        });
+      });
+    it('should throw a TypeError if filter is not a function',
+      async function() {
+        let error;
+        let result;
+        const filter = 'string';
+        try {
+          result = await database.buildUpdate(
+            user, 'user', {filter});
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(result);
+        should.exist(error);
+        error.name.should.equal('TypeError');
+        error.message.should.equal('options.filter must be a function');
+      });
+    it('should throw an Error if filter is provide with include or ' +
+      'exclude.', async function() {
+      let error;
+      let result;
+      const filter = function(obj) {
+        // filters out user.id
+        if(obj !== 'user.id') {
+          return obj;
+        }
+        return;
+      };
+      try {
+        result = await database.buildUpdate(
+          user, 'user', {filter, exclude: ['id']});
+      } catch(e) {
+        error = e;
+      }
+      should.not.exist(result);
+      should.exist(error);
+      error.name.should.equal('Error');
+      error.message.should.equal('options.filter must not be provided with ' +
+        'options.include or options.exclude');
+    });
+  });
+  describe('createIndexes', function() {
     it('should create an index', async function() {
       let error = null;
       try {
@@ -44,6 +210,160 @@ describe('api', function() {
       }
       should.not.exist(error);
     });
+  });
+  describe('createGridFSBucket', function() {
+    it('should create a streaming GridFS bucket instance', async function() {
+      let error;
+      let result;
+      try {
+        const bucketName = 'test';
+        result = await database.createGridFSBucket({
+          bucketName
+        });
+      } catch(e) {
+        error = e;
+      }
+      should.not.exist(error);
+      should.exist(result);
+      result.should.be.a('object');
+      result.s.options.bucketName.should.equal('test');
+    });
+  });
+  describe('encodeString', function() {
+    it('should encode a string with illegal mongodb key characters',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.encodeString(
+            'test$string.with%illegal.characters');
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('string');
+        result.should.equal('test%24string%2Ewith%25illegal%2Echaracters');
+      });
+  });
+  describe('encode', function() {
+    it('should encode an object',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.encode({
+            'test.name': 'name'
+          });
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('object');
+        result.should.eql({'test%2Ename': 'name'});
+      });
+    it('should encode an array',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.encode([{
+            'test.id': '1234',
+            'test.name': 'name'
+          }]);
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('array');
+        result.should.eql([{
+          'test%2Eid': '1234',
+          'test%2Ename': 'name'
+        }]);
+      });
+    it('should return original value if not object or array',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.encode('test');
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('string');
+        result.should.eql('test');
+      });
+  });
+  describe('decodeString', function() {
+    it('should decode a string that was previsouly encoded',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.decodeString(
+            'test%24string%2Ewith%25illegal%2Echaracters');
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('string');
+        result.should.equal('test$string.with%illegal.characters');
+      });
+  });
+  describe('decode', function() {
+    it('should encode an object',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.decode({'test%2Ename': 'name'});
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('object');
+        result.should.eql({'test.name': 'name'});
+      });
+    it('should encode an array',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.decode([{
+            'test%2Eid': '1234',
+            'test%2Ename': 'name'
+          }]);
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('array');
+        result.should.eql([{
+          'test.id': '1234',
+          'test.name': 'name'
+        }]);
+      });
+    it('should return original value if not object or array',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = await database.decode('test');
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('string');
+        result.should.eql('test');
+      });
   });
   describe('collections', function() {
     before(async function() {
