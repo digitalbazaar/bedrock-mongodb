@@ -34,7 +34,7 @@ describe('api', function() {
       let error;
       let result;
       try {
-        result = await database.hash('1245678');
+        result = database.hash('1245678');
       } catch(e) {
         error = e;
       }
@@ -47,7 +47,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.hash({});
+          result = database.hash({});
         } catch(e) {
           error = e;
         }
@@ -69,7 +69,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.buildUpdate(user);
+          result = database.buildUpdate(user);
         } catch(e) {
           error = e;
         }
@@ -78,12 +78,32 @@ describe('api', function() {
         result.should.be.a('object');
         result.should.eql(user);
       });
+    it('should build an update object that includes an array and uses a field',
+      async function() {
+        let error;
+        let result;
+        try {
+          result = database.buildUpdate({
+            id: '1234',
+            names: ['name1', 'name2']
+          }, 'user');
+        } catch(e) {
+          error = e;
+        }
+        should.not.exist(error);
+        should.exist(result);
+        result.should.be.a('object');
+        result.should.eql({
+          'user.id': '1234',
+          'user.names': ['name1', 'name2']
+        });
+      });
     it('should build an update object using a field',
       async function() {
         let error;
         let result;
         try {
-          result = await database.buildUpdate(user, 'user');
+          result = database.buildUpdate(user, 'user');
         } catch(e) {
           error = e;
         }
@@ -108,7 +128,7 @@ describe('api', function() {
           return;
         };
         try {
-          result = await database.buildUpdate(
+          result = database.buildUpdate(
             user, 'user', {filter});
         } catch(e) {
           error = e;
@@ -126,7 +146,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.buildUpdate(user, {exclude: ['id']});
+          result = database.buildUpdate(user, {exclude: ['id']});
         } catch(e) {
           error = e;
         }
@@ -143,7 +163,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.buildUpdate(
+          result = database.buildUpdate(
             user, 'user', {include: ['user.id']});
         } catch(e) {
           error = e;
@@ -161,7 +181,7 @@ describe('api', function() {
         let result;
         const filter = 'string';
         try {
-          result = await database.buildUpdate(
+          result = database.buildUpdate(
             user, 'user', {filter});
         } catch(e) {
           error = e;
@@ -183,7 +203,7 @@ describe('api', function() {
         return;
       };
       try {
-        result = await database.buildUpdate(
+        result = database.buildUpdate(
           user, 'user', {filter, exclude: ['id']});
       } catch(e) {
         error = e;
@@ -235,7 +255,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.encodeString(
+          result = database.encodeString(
             'test$string.with%illegal.characters');
         } catch(e) {
           error = e;
@@ -252,7 +272,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.encode({
+          result = database.encode({
             'test.name': 'name'
           });
         } catch(e) {
@@ -268,7 +288,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.encode([{
+          result = database.encode([{
             'test.id': '1234',
             'test.name': 'name'
           }]);
@@ -288,7 +308,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.encode('test');
+          result = database.encode('test');
         } catch(e) {
           error = e;
         }
@@ -304,7 +324,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.decodeString(
+          result = database.decodeString(
             'test%24string%2Ewith%25illegal%2Echaracters');
         } catch(e) {
           error = e;
@@ -321,7 +341,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.decode({'test%2Ename': 'name'});
+          result = database.decode({'test%2Ename': 'name'});
         } catch(e) {
           error = e;
         }
@@ -335,7 +355,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.decode([{
+          result = database.decode([{
             'test%2Eid': '1234',
             'test%2Ename': 'name'
           }]);
@@ -355,7 +375,7 @@ describe('api', function() {
         let error;
         let result;
         try {
-          result = await database.decode('test');
+          result = database.decode('test');
         } catch(e) {
           error = e;
         }
