@@ -54,8 +54,6 @@ describe('api', function() {
         should.not.exist(result);
         should.exist(error);
         error.name.should.equal('InvalidKey');
-        error.message.should.equal(
-          'Invalid key given to database hash method.');
       });
   });
   describe('buildUpdate', function() {
@@ -189,7 +187,6 @@ describe('api', function() {
         should.not.exist(result);
         should.exist(error);
         error.name.should.equal('TypeError');
-        error.message.should.equal('options.filter must be a function');
       });
     it('should throw an Error if filter is provide with include or ' +
       'exclude.', async function() {
@@ -211,8 +208,6 @@ describe('api', function() {
       should.not.exist(result);
       should.exist(error);
       error.name.should.equal('Error');
-      error.message.should.equal('options.filter must not be provided with ' +
-        'options.include or options.exclude');
     });
   });
   describe('createIndexes', function() {
