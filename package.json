@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
+    "esm": "^3.2.25",
     "mongodb": "^3.5.7",
     "prompt": "^1.1.0",
     "semver": "^7.3.5"
@@ -35,10 +36,12 @@
     "lib": "./lib"
   },
   "devDependencies": {
-    "eslint": "^7.9.0",
-    "eslint-config-digitalbazaar": "^2.6.1"
+    "eslint": "^7.13.0",
+    "eslint-config-digitalbazaar": "^2.8.0",
+    "eslint-plugin-jsdoc": "^37.9.7",
+    "jsdoc-to-markdown": "^6.0.1"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   }
 }
