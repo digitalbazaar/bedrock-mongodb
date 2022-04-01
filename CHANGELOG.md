@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 9.0.0 - 2022-03-xx
+## 9.0.0 - 2022-04-01
 
 ### Changed
 - **BREAKING**: Rename package to `@bedrock/mongodb`.
