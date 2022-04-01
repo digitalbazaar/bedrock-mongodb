@@ -111,13 +111,13 @@ config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.
 An object whose keys are the names of the collections that have been
 opened via `openCollections`.
 
-### openCollections(collections, callback)
+### openCollections(collections)
 
 Opens a set of collections (creating them if necessary), if they aren't already
-open. Once all of the collections are open, `callback` is called. If an error
-occurs, `callback` is called immediately with the error. If no error occurs,
-then once the `callback` has been called, `collections` object will have keys
-that match the collection names and values that are instances of
+open. Once all of the collections are open the returned promise resolves. If
+an error occurs, the returned promise rejects. If no error occurs, then once
+the promise resolves, the `collections` object will have keys that match the
+collection names and values that are instances of
 [mongodb-native][]
 [Collection](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html).
 
