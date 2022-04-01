@@ -1,8 +1,9 @@
 {
-  "name": "bedrock-mongodb",
+  "name": "@bedrock/mongodb",
   "version": "8.5.1-0",
+  "type": "module",
   "description": "Bedrock mongodb module",
-  "main": "lib",
+  "main": "./lib/index.js",
   "scripts": {
     "lint": "eslint ."
   },
@@ -24,13 +25,12 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
-    "esm": "^3.2.25",
     "mongodb": "^3.5.7",
     "prompt": "^1.1.0",
     "semver": "^7.3.5"
   },
   "peerDependencies": {
-    "bedrock": "^4.3.0"
+    "@bedrock/core": "^5.0.0"
   },
   "directories": {
     "lib": "./lib"
@@ -42,6 +42,6 @@
     "jsdoc-to-markdown": "^6.0.1"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   }
 }

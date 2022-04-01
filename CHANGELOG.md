@@ -1,5 +1,16 @@
 # bedrock-mongodb ChangeLog
 
+## 9.0.0 - 2022-03-xx
+
+### Changed
+- **BREAKING**: Rename package to `@bedrock/mongodb`.
+- **BREAKING**: Convert to module (ESM).
+- **BREAKING**: Remove default export.
+- **BREAKING**: Require node 14.x.
+
+### Removed
+- **BREAKING**: Remove all callback-variants of APIs.
+
 ## 8.5.0 - 2022-03-24
 
 ### Changed
