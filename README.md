@@ -19,8 +19,8 @@ module that uses `bedrock-mongodb` would be to expose its own API that hides
 the details of using whatever collections it has opened.
 
 ```js
-import * as bedrock from 'bedrock';
-import * as database from 'bedrock-mongodb';
+import * as bedrock from '@bedrock/core';
+import * as database from '@bedrock/mongodb';
 
 // custom configuration
 bedrock.config.mongodb.name = 'my_project_dev'; // default: bedrock_dev
@@ -67,7 +67,8 @@ using a myriad number of connection strings.
 You can also connect to access-enabled mongo servers using some small changes to the
 `config.mongodb.connectOptions`:
 ```js
-import {config} from 'bedrock';
+import {config} from '@bedrock/core';
+
 config.mongodb.username = 'me';
 config.mongodb.password = 'password';
 const {connectOptions} = config.mongodb;
