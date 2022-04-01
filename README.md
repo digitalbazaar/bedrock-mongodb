@@ -10,12 +10,12 @@ easy API for creating and working with its collections.
 ## Quick Examples
 
 ```
-npm install bedrock-mongodb
+npm install @bedrock/mongodb
 ```
 
 Below is an example that simply opens a collection when the database is ready
 and then runs a query and prints the result. A more common use case for a
-module that uses `bedrock-mongodb` would be to expose its own API that hides
+module that uses `@bedrock/mongodb` would be to expose its own API that hides
 the details of using whatever collections it has opened.
 
 ```js
