@@ -1,5 +1,10 @@
 # bedrock-mongodb ChangeLog
 
+## 9.0.1 - 2022-04-xx
+
+### Fixed
+- Use `jsdoc-to-markdown@7`.
+
 ## 9.0.0 - 2022-04-01
 
 ### Changed
