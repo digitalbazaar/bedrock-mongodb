@@ -1,10 +1,11 @@
 /*
  * Copyright (c) 2019-2020 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
+import {config} from '@bedrock/core';
+import {fileURLToPath} from 'url';
+import path from 'path';
 
-const {config} = require('bedrock');
-const path = require('path');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // MongoDB
 config.mongodb.name = 'bedrock_mongodb_test';

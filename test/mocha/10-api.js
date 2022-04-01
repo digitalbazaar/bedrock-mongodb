@@ -1,7 +1,7 @@
-/*
- * Copyright (c) 2017-2020 Digital Bazaar, Inc. All rights reserved.
+/*!
+ * Copyright (c) 2017-2022 Digital Bazaar, Inc. All rights reserved.
  */
-const database = require('bedrock-mongodb');
+import * as database from '@bedrock/mongodb';
 
 describe('api', function() {
   describe('openCollection', function() {

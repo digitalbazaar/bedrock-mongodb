@@ -19,8 +19,8 @@ module that uses `bedrock-mongodb` would be to expose its own API that hides
 the details of using whatever collections it has opened.
 
 ```js
-var bedrock = require('bedrock');
-var database = require('bedrock-mongodb');
+import * as bedrock from 'bedrock';
+import * as database from 'bedrock-mongodb';
 
 // custom configuration
 bedrock.config.mongodb.name = 'my_project_dev'; // default: bedrock_dev
@@ -41,20 +41,12 @@ bedrock.config.mongodb.url = 'mongodb://localhost:27017/my_project_dev';
 // bedrock.config.mongodb.local.enable = true; // default: false
 
 // open some collections once the database is ready
-bedrock.events.on('bedrock-mongodb.ready', function(callback) {
-  database.openCollections(['collection1', 'collection2'], function(err) {
-    if(err) {
-      return callback(err);
-    }
-    // do something with the open collection(s)
-    database.collections.collection1.find({id: 'foo'}, function(err, result) {
-      if(err) {
-        return callback(err);
-      }
-      console.log('result', result);
-      callback();
-    });
-  });
+bedrock.events.on('bedrock-mongodb.ready', async function() {
+  await database.openCollections(['collection1', 'collection2']);
+
+  // do something with the open collection(s)
+  const result = await database.collections.collection1.findOne({id: 'foo'});
+  console.log('result', result);
 });
 
 bedrock.start();
@@ -75,7 +67,7 @@ using a myriad number of connection strings.
 You can also connect to access-enabled mongo servers using some small changes to the
 `config.mongodb.connectOptions`:
 ```js
-const {config} = require('bedrock');
+import {config} from 'bedrock';
 config.mongodb.username = 'me';
 config.mongodb.password = 'password';
 const {connectOptions} = config.mongodb;
@@ -83,11 +75,11 @@ const {connectOptions} = config.mongodb;
 connectOptions.replicaSet = 'my_provider_replica_set';
 // optional, but required in production by many providers
 connectOptions.ssl = true;
-// optional, only required if your provider requires tls 
+// optional, only required if your provider requires tls
 connectOptions.tls = true;
 // the `authSource` option replaces the older `authDB` option
 // it should be specified or else it will be the `mongodb.name`
-connectOptions.authSource = 'my_provider_auth_db'; 
+connectOptions.authSource = 'my_provider_auth_db';
 ```
 MongoDB provides [excellent docs on their connection strings](https://docs.mongodb.com/manual/reference/connection-string/)
 

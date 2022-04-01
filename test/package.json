@@ -1,28 +1,29 @@
 {
   "name": "bedrock-mongodb-test",
   "version": "0.0.1-0",
+  "type": "module",
   "private": true,
   "scripts": {
     "test": "node --preserve-symlinks test.js test",
     "debug": "node --preserve-symlinks test.js test --log-level debug",
-    "coverage": "cross-env NODE_ENV=test ESM_OPTIONS='{cache:false}' nyc --reporter=lcov --reporter=text-summary npm test",
-    "coverage-ci": "cross-env NODE_ENV=test ESM_OPTIONS='{cache:false}' nyc --reporter=lcovonly npm test",
-    "coverage-report": "nyc report"
+    "coverage": "cross-env NODE_ENV=test c8 --reporter=lcov --reporter=text-summary npm test",
+    "coverage-ci": "cross-env NODE_ENV=test c8 --reporter=lcovonly npm test",
+    "coverage-report": "c8 report"
   },
   "dependencies": {
-    "bedrock": "^4.5.0",
-    "bedrock-mongodb": "file:..",
-    "bedrock-test": "^6.0.0",
-    "cross-env": "^7.0.2",
-    "nyc": "^15.1.0"
+    "@bedrock/core": "^5.0.0",
+    "@bedrock/mongodb": "file:..",
+    "@bedrock/test": "^7.0.3",
+    "c8": "^7.11.0",
+    "cross-env": "^7.0.2"
   },
-  "nyc": {
+  "c8": {
     "excludeNodeModules": false,
     "include": [
-      "node_modules/bedrock-mongodb/**"
+      "node_modules/@bedrock/mongodb/**"
     ],
     "exclude": [
-      "node_modules/bedrock-mongodb/node_modules/**"
+      "node_modules/@bedrock/mongodb/node_modules/**"
     ]
   }
 }
