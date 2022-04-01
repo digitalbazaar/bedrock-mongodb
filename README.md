@@ -91,9 +91,9 @@ config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.
 ## Requirements
 
 * Linux or Mac OS X (also works on Windows with some coaxing)
-* node.js >= 6.x.x
-* npm >= 1.4.x
-* mongodb ~= 3.x
+* node.js >= 14.x
+* npm >= 6.x
+* mongodb ~= 4.x
 * libkrb5-dev >= 1.x.x
 
 ## Setup
