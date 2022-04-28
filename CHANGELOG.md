@@ -1,5 +1,15 @@
 # bedrock-mongodb ChangeLog
 
+## 10.0.0 - 2022-04-xx
+
+### Changed
+- **BREAKING**: Require `@bedrock/core@6` peer dep.
+
+### Removed
+- **BREAKING**: Remove option to create a user via command line prompt. This
+  mechanism is very old and is not a recommended way (and is no longer
+  supported) to configure or setup a modern bedrock application.
+
 ## 9.0.1 - 2022-04-01
 
 ### Fixed
