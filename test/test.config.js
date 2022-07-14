@@ -16,8 +16,8 @@ if(process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD) {
   config.mongodb.username = process.env.MONGODB_USERNAME;
   config.mongodb.password = process.env.MONGODB_PASSWORD;
   const {connectOptions} = config.mongodb;
-  // this can be false
-  connectOptions.ssl = true;
+  // process.env.MONGODB_SSL should be 1 to test with SSL
+  connectOptions.ssl = Boolean(process.env.MONGODB_SSL) || false;
   connectOptions.authSource = process.env.MONGODB_AUTHSOURCE || 'admin';
   // this can safely be undefined
   config.mongodb.connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
