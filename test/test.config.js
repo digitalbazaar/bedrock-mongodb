@@ -25,6 +25,6 @@ if(process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD) {
 //config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;
 config.mongodb.dropCollections.collections = [];
-config.mongodb.forceAuthentication = true;
+config.mongodb.forceAuthentication = false;
 
 config.mocha.tests.push(path.join(__dirname, 'mocha'));
