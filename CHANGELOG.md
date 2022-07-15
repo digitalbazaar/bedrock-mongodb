@@ -1,5 +1,16 @@
 # bedrock-mongodb ChangeLog
 
+## 10.0.1 -
+
+### Fixed
+- `openDatabase` now queries for serverInfo first.
+- `openDatabase` now correctly checks if auth is needed.
+- `openDatabase` no longer double logins in authenticated users.
+
+### Added
+- `openDatabase` pings server on successful connect.
+- Github Actions now test on authenticated & unauthenticated databases.
+
 ## 10.0.0 - 2022-04-28
 
 ### Changed
