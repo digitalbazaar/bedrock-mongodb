@@ -44,6 +44,39 @@ jobs:
       run: |
         cd test
         npm test
+  test-node-with-auth:
+    needs: [test-node]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      mongodb:
+        image: mongo:4.4
+        ports:
+          - 27017:27017
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: example
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: |
+        npm install
+        cd test
+        npm install
+    - name: Run test with Node.js ${{ matrix.node-version }}
+      environment:
+        MONGODB_USERNAME: root
+        MONGODB_PASSWORD: example
+      run: |
+        cd test
+        npm test
+
   coverage:
     needs: [test-node]
     runs-on: ubuntu-latest
