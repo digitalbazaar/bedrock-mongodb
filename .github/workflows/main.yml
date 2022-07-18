@@ -70,12 +70,12 @@ jobs:
         cd test
         npm install
     - name: Run test with Node.js ${{ matrix.node-version }}
-      environment:
-        MONGODB_USERNAME: root
-        MONGODB_PASSWORD: example
       run: |
         cd test
         npm test
+      env:
+        MONGODB_USERNAME: root
+        MONGODB_PASSWORD: example
 
   coverage:
     needs: [test-node]
