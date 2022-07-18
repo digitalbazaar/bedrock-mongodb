@@ -20,7 +20,15 @@ if(process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD) {
   connectOptions.ssl = Boolean(process.env.MONGODB_SSL) || false;
   connectOptions.authSource = process.env.MONGODB_AUTHSOURCE || 'admin';
   // this can safely be undefined
-  config.mongodb.connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
+  connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
+  console.log(
+    'TESTING WITH AUTH ', {
+      username: config.mongodb.username,
+      authSource: connectOptions.authSource,
+      password: Boolean(config.mongodb.password),
+      ssl: connectOptions.ssl,
+      replicaSet: connectOptions.replicaSet
+    });
 }
 //config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;
