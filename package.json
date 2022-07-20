@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-mongodb",
   "dependencies": {
-    "klona": "^2.0.5",
     "mongodb": "^3.7.3",
     "semver": "^7.3.7"
   },
