@@ -11,16 +11,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config.mongodb.name = 'bedrock_mongodb_test';
 config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
 config.mongodb.port = process.env.MONGODB_PORT || 27017;
+config.mongodb.skipChecks = Boolean(process.env.MONGODB_SKIPCHECKS) || false;
+// used for testing url only connections
+config.mongodb.url = process.env.MONGODB_URL;
+// process.env.MONGODB_SSL should be 1 to test with SSL
+config.mongodb.connectOptions.ssl = Boolean(process.env.MONGODB_SSL) || false;
+// this can safely be undefined
+config.mongodb.connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
 
 if(process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD) {
   config.mongodb.username = process.env.MONGODB_USERNAME;
   config.mongodb.password = process.env.MONGODB_PASSWORD;
   const {connectOptions} = config.mongodb;
-  // process.env.MONGODB_SSL should be 1 to test with SSL
-  connectOptions.ssl = Boolean(process.env.MONGODB_SSL) || false;
   connectOptions.authSource = process.env.MONGODB_AUTHSOURCE || 'admin';
-  // this can safely be undefined
-  connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
   console.log(
     'TESTING WITH AUTH ', {
       username: config.mongodb.username,
