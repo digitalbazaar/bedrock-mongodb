@@ -1,5 +1,11 @@
 # bedrock-mongodb ChangeLog
 
+## 10.1.0 -
+
+### Added
+- Added a new config option `skipChecks` that allows you to skip auth, server
+  version, & role checks.
+
 ## 10.0.1 -
 
 ### Fixed
