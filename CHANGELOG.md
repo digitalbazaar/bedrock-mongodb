@@ -1,6 +1,10 @@
 # bedrock-mongodb ChangeLog
 
-## 10.1.0 -
+## 10.1.1 -
+
+### Fixed
+- No longer pass in `authSource: undefined` as this causes connection strings to fail.
+- No longer pass in `ssl: undefined` as Mongo defaults to `ssl: true`.
 
 ### Added
 - Added a new config option `skipChecks` that allows you to skip auth, server
