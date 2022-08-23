@@ -7,15 +7,27 @@ import path from 'node:path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const convertToBoolean = (envVariable = '') => {
+  if(/^(1|true)$/.test(envVariable)) {
+    return true;
+  }
+  return false;
+};
+
 // MongoDB
 config.mongodb.name = 'bedrock_mongodb_test';
 config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
 config.mongodb.port = process.env.MONGODB_PORT || 27017;
-// set the env variable to 1 or make these true
-// don't set the env variable for false
-config.mongodb.checkServerDetails =
-  Boolean(process.env.MONGODB_SKIPCHECKS) || true;
-config.mongodb.connectOptions.ssl = Boolean(process.env.MONGODB_SSL) || false;
+// set the env variable to 1 or true to make these true
+// set the env variable to anything else to make them false
+
+if(process.env.MONGODB_SKIPCHECKS) {
+  config.mongodb.checkServerDetails =
+    convertToBoolean(process.env.MONGODB_SKIPCHECKS);
+}
+if(process.env.MONGODB_SSL) {
+  config.mongodb.connectOptions.ssl = convertToBoolean(process.env.MONGODB_SSL);
+}
 // used for testing url only connections
 config.mongodb.url = process.env.MONGODB_URL;
 // this can safely be undefined
