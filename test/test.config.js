@@ -11,11 +11,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config.mongodb.name = 'bedrock_mongodb_test';
 config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
 config.mongodb.port = process.env.MONGODB_PORT || 27017;
+// set the env variable to 1 or make these true
+// don't set the env variable for false
 config.mongodb.skipChecks = Boolean(process.env.MONGODB_SKIPCHECKS) || false;
+config.mongodb.connectOptions.ssl = Boolean(process.env.MONGODB_SSL) || false;
 // used for testing url only connections
 config.mongodb.url = process.env.MONGODB_URL;
-// process.env.MONGODB_SSL should be 1 to test with SSL
-config.mongodb.connectOptions.ssl = Boolean(process.env.MONGODB_SSL) || false;
 // this can safely be undefined
 config.mongodb.connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
 
