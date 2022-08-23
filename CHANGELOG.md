@@ -7,7 +7,7 @@
 - No longer pass in other undefined connectOptions.
 
 ### Added
-- Added a new config option `skipChecks` that allows you to skip auth, server
+- Added a new config option `checkServerDetails` that allows you to skip auth, server
   version, & role checks.
 
 ## 10.0.1 -
