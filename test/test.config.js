@@ -20,10 +20,9 @@ config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
 config.mongodb.port = process.env.MONGODB_PORT || 27017;
 // set the env variable to 1 or true to make these true
 // set the env variable to anything else to make them false
-
-if(process.env.MONGODB_SKIPCHECKS) {
+if(process.env.MONGODB_CHECK_SERVER_DETAILS) {
   config.mongodb.checkServerDetails =
-    convertToBoolean(process.env.MONGODB_SKIPCHECKS);
+    convertToBoolean(process.env.MONGODB_CHECK_SERVER_DETAILS);
 }
 if(process.env.MONGODB_SSL) {
   config.mongodb.connectOptions.ssl = convertToBoolean(process.env.MONGODB_SSL);
