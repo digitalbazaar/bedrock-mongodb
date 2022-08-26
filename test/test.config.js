@@ -14,6 +14,8 @@ const convertToBoolean = (envVariable = '') => {
   return false;
 };
 
+const {connectOptions} = config.mongodb;
+
 // MongoDB
 config.mongodb.name = 'bedrock_mongodb_test';
 config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
@@ -25,27 +27,19 @@ if(process.env.MONGODB_CHECK_SERVER_DETAILS) {
     convertToBoolean(process.env.MONGODB_CHECK_SERVER_DETAILS);
 }
 if(process.env.MONGODB_SSL) {
-  config.mongodb.connectOptions.ssl = convertToBoolean(process.env.MONGODB_SSL);
+  connectOptions.ssl = convertToBoolean(process.env.MONGODB_SSL);
 }
 // used for testing url only connections
 config.mongodb.url = process.env.MONGODB_URL;
 // this can safely be undefined
-config.mongodb.connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
+connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
 
-if(process.env.MONGODB_USERNAME && process.env.MONGODB_PASSWORD) {
-  config.mongodb.username = process.env.MONGODB_USERNAME;
-  config.mongodb.password = process.env.MONGODB_PASSWORD;
-  const {connectOptions} = config.mongodb;
-  connectOptions.authSource = process.env.MONGODB_AUTHSOURCE || 'admin';
-  console.log(
-    'TESTING WITH AUTH ', {
-      username: config.mongodb.username,
-      authSource: connectOptions.authSource,
-      password: Boolean(config.mongodb.password),
-      ssl: connectOptions.ssl,
-      replicaSet: connectOptions.replicaSet
-    });
+config.mongodb.username = process.env.MONGODB_USERNAME;
+config.mongodb.password = process.env.MONGODB_PASSWORD;
+if(process.env.MONGODB_AUTHSOURCE) {
+  connectOptions.authSource = process.env.MONGODB_AUTHSOURCE;
 }
+
 //config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;
 config.mongodb.dropCollections.collections = [];
