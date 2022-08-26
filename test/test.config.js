@@ -22,13 +22,16 @@ config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
 config.mongodb.port = process.env.MONGODB_PORT || 27017;
 // set the env variable to 1 or true to make these true
 // set the env variable to anything else to make them false
-if(process.env.MONGODB_CHECK_SERVER_DETAILS) {
-  config.mongodb.checkServerDetails =
-    convertToBoolean(process.env.MONGODB_CHECK_SERVER_DETAILS);
-}
 if(process.env.MONGODB_SSL) {
   connectOptions.ssl = convertToBoolean(process.env.MONGODB_SSL);
 }
+if(process.env.MONGODB_TLS) {
+  connectOptions.tls = convertToBoolean(process.env.MONGODB_TLS);
+}
+if(process.env.MONGODB_AUTHSOURCE) {
+  connectOptions.authSource = process.env.MONGODB_AUTHSOURCE;
+}
+
 // used for testing url only connections
 config.mongodb.url = process.env.MONGODB_URL;
 // this can safely be undefined
@@ -36,9 +39,6 @@ connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
 
 config.mongodb.username = process.env.MONGODB_USERNAME;
 config.mongodb.password = process.env.MONGODB_PASSWORD;
-if(process.env.MONGODB_AUTHSOURCE) {
-  connectOptions.authSource = process.env.MONGODB_AUTHSOURCE;
-}
 
 //config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;

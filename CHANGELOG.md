@@ -1,14 +1,10 @@
 # bedrock-mongodb ChangeLog
 
-## 10.1.1 -
+## 10.0.1 -
 
 ### Fixed
 - No longer pass in `authSource: undefined` as this causes connection strings with auth to fail.
-- No longer pass in other undefined connectOptions.
-
-### Added
-- Added a new config option `checkServerDetails` that allows you to skip auth, server
-  version, & role checks.
+- No longer pass in other `ssl: undefined` in connectOptions.
 
 ## 10.0.1 -
 
