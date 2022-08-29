@@ -26,14 +26,20 @@ if(process.env.MONGODB_TLS) {
 if(process.env.MONGODB_AUTHSOURCE) {
   connectOptions.authSource = process.env.MONGODB_AUTHSOURCE;
 }
-
-// used for testing url only connections
-config.mongodb.url = process.env.MONGODB_URL;
-// this can safely be undefined
-connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
-
-config.mongodb.username = process.env.MONGODB_USERNAME;
-config.mongodb.password = process.env.MONGODB_PASSWORD;
+if(process.env.MONGODB_URL) {
+  // used for testing url only connections
+  config.mongodb.url = process.env.MONGODB_URL;
+}
+if(process.env.MONGODB_REPLICASET) {
+  // this can safely be undefined
+  connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
+}
+if(process.env.MONGODB_USERNAME) {
+  config.mongodb.username = process.env.MONGODB_USERNAME;
+}
+if(process.env.MONGODB_PASSWORD) {
+  config.mongodb.password = process.env.MONGODB_PASSWORD;
+}
 
 //config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;
