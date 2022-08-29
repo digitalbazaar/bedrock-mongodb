@@ -7,12 +7,7 @@ import path from 'node:path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const convertToBoolean = (envVariable = '') => {
-  if(/^(1|true)$/.test(envVariable)) {
-    return true;
-  }
-  return false;
-};
+const convertToBoolean = (envVariable = '') => /^(1|true)$/.test(envVariable);
 
 const {connectOptions} = config.mongodb;
 
