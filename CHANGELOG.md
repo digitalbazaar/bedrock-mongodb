@@ -5,8 +5,7 @@
 ### Fixed
 - No longer pass in `authSource: undefined` as this causes connection strings with auth to fail.
 - No longer pass in `ssl: undefined` in connectOptions.
-- Use `db.databaseName` when logging connection success over `config.name`. 
-- Allow Mongo Driver to infer the database being connected to over using `config.name`.
+- Use `db.databaseName` when logging connection success over `config.name`.
 
 ## 10.0.1 -
 
