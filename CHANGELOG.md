@@ -1,22 +1,19 @@
 # bedrock-mongodb ChangeLog
 
-## 10.0.2 -
+## 10.0.1 -
 
 ### Fixed
 - No longer pass in `authSource: undefined` as this causes connection strings with auth to fail.
 - No longer pass in `ssl: undefined` in connectOptions.
-- Use `db.databaseName` when logging connection success over `config.name`.
-
-## 10.0.1 -
-
-### Fixed
 - `openDatabase` now queries for serverInfo first.
 - `openDatabase` now correctly checks if auth is needed.
 - `openDatabase` no longer double logins in authenticated users.
+- `socketOptions` are being set correctly in connectOptions again.
+- Use `db.databaseName` when logging connection success over `config.name`.
 
 ### Added
-- `openDatabase` pings server on successful connect.
 - Github Actions now test on authenticated & unauthenticated databases.
+- `openDatabase` pings server on successful connect.
 
 ## 10.0.0 - 2022-04-28
 
