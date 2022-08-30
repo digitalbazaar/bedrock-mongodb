@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 10.0.1 - 2022-08-xx
+## 10.0.1 - 2022-08-30
 
 ### Added
 - Github Actions now test on authenticated & unauthenticated databases.
