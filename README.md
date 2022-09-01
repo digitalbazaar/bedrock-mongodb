@@ -25,6 +25,7 @@ import * as database from '@bedrock/mongodb';
 // custom configuration
 bedrock.config.mongodb.name = 'my_project_dev'; // default: bedrock_dev
 bedrock.config.mongodb.host = 'localhost';      // default: localhost
+bedrock.config.mongodb.protocol = 'mongodb'; // default: mongodb
 bedrock.config.mongodb.port = 27017;            // default: 27017
 bedrock.config.mongodb.username = 'my_project'; // default: bedrock
 bedrock.config.mongodb.password = 'password';   // default: password
@@ -71,6 +72,7 @@ import {config} from '@bedrock/core';
 
 config.mongodb.username = 'me';
 config.mongodb.password = 'password';
+config.mongodb.protocol = 'mongodb+srv';
 const {connectOptions} = config.mongodb;
 // optional, only required if connecting to a replicaSet
 connectOptions.replicaSet = 'my_provider_replica_set';
