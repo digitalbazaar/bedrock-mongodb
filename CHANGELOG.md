@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 10.1.0 - 2022-09-xx
+## 10.1.0 - 2022-09-01
 
 ### Added
 - A new config option `config.protocol` which allows connections to replicateSets
