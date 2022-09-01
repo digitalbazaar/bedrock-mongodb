@@ -7,14 +7,18 @@ import path from 'node:path';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const convertToBoolean = (envVariable = '') => /^(1|true)$/.test(envVariable);
+const convertToBoolean = (envVariable = '') => /^(1|true)$/i.test(envVariable);
+const assertNull = envVariable => /^null$/i.test(envVariable);
 
 const {connectOptions} = config.mongodb;
 
 // MongoDB
 config.mongodb.name = 'bedrock_mongodb_test';
 config.mongodb.host = process.env.MONGODB_HOST || 'localhost';
-config.mongodb.port = process.env.MONGODB_PORT || 27017;
+if(process.env.MONGODB_PORT) {
+  config.mongodb.port = assertNull(process.env.MONGODB_PORT) ?
+    null : process.env.MONGODB_PORT;
+}
 // set the env variable to 1 or true to make these true
 // set the env variable to anything else to make them false
 if(process.env.MONGODB_SSL) {
