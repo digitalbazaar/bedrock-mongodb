@@ -1,9 +1,12 @@
 # bedrock-mongodb ChangeLog
 
-## 10.0.2 -
+## 10.1.1 -
 ### Fixed
 - Throw if `config.port` is invalid.
 - Ignore `config.port` if it's `undefined` or `null`.
+
+### Added
+- A new config option `config.protocol` which allows connections to replicateSets using `mongodb+srv`.
 
 ## 10.0.1 - 2022-08-30
 
