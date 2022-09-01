@@ -19,6 +19,9 @@ if(process.env.MONGODB_PORT) {
   config.mongodb.port = assertNull(process.env.MONGODB_PORT) ?
     null : process.env.MONGODB_PORT;
 }
+if(process.env.MONGODB_PROTOCOL) {
+  config.mongodb.protocol = process.env.MONGODB_PROTOCOL;
+}
 // set the env variable to 1 or true to make these true
 // set the env variable to anything else to make them false
 if(process.env.MONGODB_SSL) {
