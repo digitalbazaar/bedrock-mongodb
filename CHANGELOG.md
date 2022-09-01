@@ -1,8 +1,9 @@
 # bedrock-mongodb ChangeLog
 
 ## 10.0.2 -
-## Fixed
-- Do not add `config.port` to connection url if it is not a valid port.
+### Fixed
+- Throw if `config.port` is invalid.
+- Ignore `config.port` if it's `undefined` or `null`.
 
 ## 10.0.1 - 2022-08-30
 
