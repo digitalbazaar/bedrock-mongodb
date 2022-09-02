@@ -74,8 +74,7 @@ jobs:
         cd test
         npm test
       env:
-        MONGODB_USERNAME: root
-        MONGODB_PASSWORD: example
+        MONGODB_URL="mongodb://root:example@localhost:27017/bedrock_mongodb_test?authSource=admin"
 
   coverage:
     needs: [test-node]
