@@ -76,7 +76,6 @@ jobs:
       env:
         MONGODB_USERNAME: root
         MONGODB_PASSWORD: example
-        MONGODB_AUTHSOURCE: admin
 
   coverage:
     needs: [test-node]
