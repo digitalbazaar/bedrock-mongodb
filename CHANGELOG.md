@@ -1,5 +1,13 @@
 # bedrock-mongodb ChangeLog
 
+## 11.0.0 -
+
+### Removed
+- **BREAKING**: Remove roles check from authn.
+
+### Added
+- **BREAKING**: Throw if server version is less than 2.6.
+
 ## 10.1.1 -
 
 ### Changed
