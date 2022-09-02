@@ -4,6 +4,10 @@
 
 ### Changed
 - **BREAKING**: Upgrade to `mongodb: ^4.9.0`
+- **BREAKING**: Remove all defaults for `authSource`.
+- **BREAKING**: Remove `config.mongodb.username`.
+- **BREAKING**: Remove `config.mongodb.password`.
+- **BREAKING**: Remove setting username, password, and or authSource from `urls.create`.
 
 ## 10.1.1 -
 
