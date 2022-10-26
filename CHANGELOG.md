@@ -6,7 +6,7 @@
 - **BREAKING**: Remove roles check from authn.
 
 ### Added
-- **BREAKING**: Throw if server version is less than 2.6.
+- **BREAKING**: Throw if server version is less than 3.6.
 
 ## 10.1.1 -
 
