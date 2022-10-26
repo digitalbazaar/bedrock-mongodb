@@ -48,6 +48,11 @@ if(process.env.MONGODB_PASSWORD) {
   config.mongodb.password = process.env.MONGODB_PASSWORD;
 }
 
+if(process.env.MONGODB_SERVER_VERSION) {
+  config.mongodb.requirements.serverVersion =
+    process.env.MONGODB_SERVER_VERSION;
+}
+
 //config.mongodb.connectOptions.loggerLevel = 'debug';
 config.mongodb.dropCollections.onInit = true;
 config.mongodb.dropCollections.collections = [];
