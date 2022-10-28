@@ -4,6 +4,7 @@
 
 ### Changed
 - **BREAKING**: Upgrade to `mongodb: ^4.9.0`
+- **BREAKING**: MDBE_ERRORS is now a set.
 
 ## 10.1.1 -
 
