@@ -27,19 +27,12 @@ bedrock.config.mongodb.name = 'my_project_dev'; // default: bedrock_dev
 bedrock.config.mongodb.host = 'localhost';      // default: localhost
 bedrock.config.mongodb.protocol = 'mongodb'; // default: mongodb
 bedrock.config.mongodb.port = 27017;            // default: 27017
-bedrock.config.mongodb.username = 'my_project'; // default: bedrock
-bedrock.config.mongodb.password = 'password';   // default: password
 
 // the mongodb database 'my_project_dev' and the 'my_project' user will
 // be created on start up following a prompt for the admin user credentials
 
 // alternatively, use `mongodb` URL format:
 bedrock.config.mongodb.url = 'mongodb://localhost:27017/my_project_dev';
-
-// enable local collection if a local database is available
-// the local database has similar options to primary database
-// see lib/config.js for details
-// bedrock.config.mongodb.local.enable = true; // default: false
 
 // open some collections once the database is ready
 bedrock.events.on('bedrock-mongodb.ready', async function() {
@@ -61,34 +54,37 @@ For documentation on database configuration, see [config.js](./lib/config.js).
 MongoDB's documentation offers tons of great examples on how to authenticate
 using a myriad number of connection strings.
 
-[Mongo Node 3.5 Driver connect docs](http://mongodb.github.io/node-mongodb-native/3.5/tutorials/connect/)
+[Mongo Node 4.8 Driver connect docs](https://www.mongodb.com/docs/drivers/node/v4.8/fundamentals/connection/connect/)
 
-[Mongo Node 3.5 Driver atlas docs](https://docs.mongodb.com/drivers/node#connect-to-mongodb-atlas)
+[Mongo Node 4.8 Driver atlas docs](https://www.mongodb.com/docs/atlas/driver-connection/?tck=docs_driver_nodejs)
 
-You can also connect to access-enabled mongo servers using some small changes to the
+You can also connect to auth-enabled mongo servers using some small changes to the
 `config.mongodb.connectOptions`:
 ```js
 import {config} from '@bedrock/core';
 
-config.mongodb.username = 'me';
-config.mongodb.password = 'password';
 config.mongodb.protocol = 'mongodb+srv';
 const {connectOptions} = config.mongodb;
+connectOptions.auth = {
+  username: 'me',
+  password: 'password'
+};
 // optional, only required if connecting to a replicaSet
 connectOptions.replicaSet = 'my_provider_replica_set';
 // optional, but required in production by many providers
 connectOptions.ssl = true;
 // optional, only required if your provider requires tls
 connectOptions.tls = true;
-// the `authSource` option replaces the older `authDB` option
-// it should be specified or else it will be the `mongodb.name`
+// the `authSource` is database to authenticate against
+// it should be specified or it will default to the database
+// you're connecting to
 connectOptions.authSource = 'my_provider_auth_db';
 ```
 MongoDB provides [excellent docs on their connection strings](https://docs.mongodb.com/manual/reference/connection-string/)
 
 You can connect using a url by setting:
 ```js
-config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=admin';
+config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/myDatabase?authSource=admin';
 ```
 
 ## Requirements

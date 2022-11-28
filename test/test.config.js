@@ -42,10 +42,16 @@ if(process.env.MONGODB_REPLICASET) {
   connectOptions.replicaSet = process.env.MONGODB_REPLICASET;
 }
 if(process.env.MONGODB_USERNAME) {
-  config.mongodb.username = process.env.MONGODB_USERNAME;
+  if(!connectOptions.auth) {
+    connectOptions.auth = {};
+  }
+  connectOptions.auth.username = process.env.MONGODB_USERNAME;
 }
 if(process.env.MONGODB_PASSWORD) {
-  config.mongodb.password = process.env.MONGODB_PASSWORD;
+  if(!connectOptions.auth) {
+    connectOptions.auth = {};
+  }
+  connectOptions.auth.password = process.env.MONGODB_PASSWORD;
 }
 
 //config.mongodb.connectOptions.loggerLevel = 'debug';

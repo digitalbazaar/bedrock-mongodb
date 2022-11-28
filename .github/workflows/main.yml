@@ -29,7 +29,7 @@ jobs:
           - 27017:27017
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -58,7 +58,7 @@ jobs:
           MONGO_INITDB_ROOT_PASSWORD: example
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -74,9 +74,7 @@ jobs:
         cd test
         npm test
       env:
-        MONGODB_USERNAME: root
-        MONGODB_PASSWORD: example
-        MONGODB_AUTHSOURCE: admin
+        MONGODB_URL: mongodb://root:example@localhost:27017/bedrock_mongodb_test?authSource=admin
 
   coverage:
     needs: [test-node]
@@ -89,7 +87,7 @@ jobs:
           - 27017:27017
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
