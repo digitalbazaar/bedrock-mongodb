@@ -5,6 +5,9 @@
 ### Changed
 - **BREAKING**: Upgrade to `mongodb: ^4.9.0`
 
+### Removed
+- Remove `config.adminPrompt`.
+
 ## 10.1.1 -
 
 ### Changed
