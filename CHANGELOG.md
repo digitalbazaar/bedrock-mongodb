@@ -1,5 +1,13 @@
 # bedrock-mongodb ChangeLog
 
+## 11.0.0 -
+
+### Changed
+- **BREAKING**: Upgrade to `mongodb: ^4.9.0`
+
+### Removed
+- Remove unused `config.adminPrompt`.
+
 ## 10.1.1 -
 
 ### Changed

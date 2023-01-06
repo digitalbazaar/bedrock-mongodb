@@ -31,7 +31,7 @@ bedrock.config.mongodb.username = 'my_project'; // default: bedrock
 bedrock.config.mongodb.password = 'password';   // default: password
 
 // the mongodb database 'my_project_dev' and the 'my_project' user will
-// be created on start up following a prompt for the admin user credentials
+// be created on start up.
 
 // alternatively, use `mongodb` URL format:
 bedrock.config.mongodb.url = 'mongodb://localhost:27017/my_project_dev';
@@ -106,6 +106,7 @@ config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.
    for your version of MongoDB. Version 4.2.x is currently supported.
 2. [optional] Tweak your project's configuration settings; see
    [Configuration](#configuration) or [Quick Examples](#quickexamples).
+3. Ensure the user for your database and/or collections is setup too.
 
 ## API
 

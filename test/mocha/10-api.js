@@ -218,7 +218,7 @@ describe('api', function() {
         await database.createIndexes([{
           collection: 'test',
           fields: {id: 1},
-          options: {unique: true, background: false}
+          options: {unique: true}
         }]);
       } catch(e) {
         error = e;
@@ -386,7 +386,7 @@ describe('api', function() {
       await database.createIndexes([{
         collection: 'test',
         fields: {id: 1},
-        options: {unique: true, background: false}
+        options: {unique: true}
       }]);
     });
     it('should have collections', async function() {
