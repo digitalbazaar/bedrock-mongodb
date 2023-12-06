@@ -5,7 +5,7 @@ easy API for creating and working with its collections.
 
 ## Requirements
 
-- npm v3+
+- npm v9+
 
 ## Quick Examples
 
