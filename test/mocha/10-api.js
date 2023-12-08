@@ -407,6 +407,26 @@ describe('api', function() {
       should.exist(result);
       should.not.exist(error);
     });
+    it('should properly promote binary values to buffers', async function() {
+      let error;
+      let result = null;
+      const recordId = '06f336c0-7177-401b-a8ce-9a2e36331b8e';
+      try {
+        const record = {
+          id: recordId,
+          aBinaryField: Buffer.from(recordId)
+        };
+        await database.collections.test.insertOne(record);
+        result = await database.collections.test
+          .findOne({id: recordId});
+      } catch(e) {
+        error = e;
+      }
+      should.exist(result);
+      should.not.exist(error);
+      result.aBinaryField.should.be.instanceof(Buffer);
+      result.aBinaryField.toString().should.equal(recordId);
+    });
     it('should insertMany into a collection', async function() {
       let error;
       try {
