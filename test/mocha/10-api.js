@@ -406,6 +406,7 @@ describe('api', function() {
       }
       should.exist(result);
       should.not.exist(error);
+      result.should.have.keys(['acknowledged', 'insertedId']);
     });
     it('should properly promote binary values to buffers', async function() {
       let error;
