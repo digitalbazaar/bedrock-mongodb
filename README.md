@@ -127,8 +127,7 @@ collection names and values that are instances of
 ### createGridFSBucket(options)
 
 Creates and returns a new `GridFSBucket` from the native driver. Options are
-the same as for `GridFSBucket`. The current client is used and the
-`writeConcern` option defaults to the `writeOptions` config value.
+the same as for `GridFSBucket`. The current client is used.
 
 ## Test Mode
 ### Drop Collections on Initialization
