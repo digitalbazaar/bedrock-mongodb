@@ -433,13 +433,12 @@ describe('api', function() {
           aBinaryField: Buffer.from(recordId)
         };
         await database.collections.test.insertOne(record);
-        result = await database.collections.test
-          .findOne({id: recordId});
+        result = await database.collections.test.findOne({id: recordId});
       } catch(e) {
         error = e;
       }
-      should.exist(result);
       should.not.exist(error);
+      should.exist(result);
       result.aBinaryField.should.be.instanceof(Buffer);
       result.aBinaryField.toString().should.equal(recordId);
     });
