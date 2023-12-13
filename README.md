@@ -58,12 +58,10 @@ bedrock.start();
 For documentation on database configuration, see [config.js](./lib/config.js).
 
 ### Connecting and Authenticating
-MongoDB's documentation offers tons of great examples on how to authenticate
-using a myriad number of connection strings.
+MongoDB's documentation provides examples on how to authenticate using a myriad
+number of connection strings.
 
-[Mongo Node 3.5 Driver connect docs](http://mongodb.github.io/node-mongodb-native/3.5/tutorials/connect/)
-
-[Mongo Node 3.5 Driver atlas docs](https://docs.mongodb.com/drivers/node#connect-to-mongodb-atlas)
+[Mongo Node Driver connect docs](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/)
 
 You can also connect to access-enabled mongo servers using some small changes to the
 `config.mongodb.connectOptions`:
@@ -94,9 +92,9 @@ config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.
 ## Requirements
 
 * Linux or Mac OS X (also works on Windows with some coaxing)
-* node.js >= 14.x
-* npm >= 6.x
-* mongodb ~= 4.x
+* node.js >= 18.x
+* npm >= 9.x
+* mongodb >= 5.x
 * libkrb5-dev >= 1.x.x
 
 ## Setup
@@ -105,7 +103,7 @@ config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.
    at [mongodb.org](http://docs.mongodb.org/manual/tutorial/add-user-administrator/)
    for your version of MongoDB. Version 4.2.x is currently supported.
 2. [optional] Tweak your project's configuration settings; see
-   [Configuration](#configuration) or [Quick Examples](#quickexamples).
+   [Configuration](#configuration) or [Quick Examples](#quick-examples).
 
 ## API
 
@@ -122,7 +120,7 @@ an error occurs, the returned promise rejects. If no error occurs, then once
 the promise resolves, the `collections` object will have keys that match the
 collection names and values that are instances of
 [mongodb-native][]
-[Collection](http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html).
+[Collection](https://mongodb.github.io/node-mongodb-native/6.3/classes/Collection.html).
 
 ### createGridFSBucket(options)
 
@@ -165,4 +163,4 @@ Commercial licensing and support are available by contacting
 [Digital Bazaar](https://digitalbazaar.com/) <support@digitalbazaar.com>.
 
 [bedrock]: https://github.com/digitalbazaar/bedrock
-[mongodb-native]: http://mongodb.github.io/node-mongodb-native/3.5/
+[mongodb-native]: https://www.mongodb.com/docs/drivers/node/current/
