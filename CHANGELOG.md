@@ -1,5 +1,15 @@
 # bedrock-mongodb ChangeLog
 
+## 10.1.1 -
+
+### Changed
+- Connection options are now derived from a deep copy of the config.
+- `_getUnauthenticatedDb` uses same options object as `_connect` does.
+
+### Fixed
+- `config.url` is now set so there are not cases where logs don't contain a url.
+- `_getUnauthenticatedDb` uses `urls.sanitize` instead of a duplicate function.
+
 ## 10.1.0 - 2022-09-01
 
 ### Added
