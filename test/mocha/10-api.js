@@ -1,5 +1,5 @@
 /*!
- * Copyright (c) 2017-2022 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2017-2024 Digital Bazaar, Inc. All rights reserved.
  */
 import * as database from '@bedrock/mongodb';
 
@@ -406,6 +406,26 @@ describe('api', function() {
       }
       should.exist(result);
       should.not.exist(error);
+      result.should.have.keys(['acknowledged', 'insertedId']);
+    });
+    it('should properly promote binary values to buffers', async function() {
+      let error;
+      let result = null;
+      const recordId = '06f336c0-7177-401b-a8ce-9a2e36331b8e';
+      try {
+        const record = {
+          id: recordId,
+          aBinaryField: Buffer.from(recordId)
+        };
+        await database.collections.test.insertOne(record);
+        result = await database.collections.test.findOne({id: recordId});
+      } catch(e) {
+        error = e;
+      }
+      should.not.exist(error);
+      should.exist(result);
+      result.aBinaryField.should.be.instanceof(Buffer);
+      result.aBinaryField.toString().should.equal(recordId);
     });
     it('should insertMany into a collection', async function() {
       let error;
@@ -453,6 +473,29 @@ describe('api', function() {
       should.exist(result);
       result.should.be.an('array');
       result.length.should.equal(2);
+    });
+  });
+  describe('isDuplicateError helper', () => {
+    it('should properly detect a duplicate error', async function() {
+      await database.openCollections(['test']);
+      await database.createIndexes([{
+        collection: 'test',
+        fields: {id: 1},
+        options: {unique: true}
+      }]);
+      const record = {
+        id: 'f466586f-7006-474d-ae44-d16c96a7b5c3'
+      };
+      await database.collections.test.insertOne(record);
+
+      let error = null;
+      try {
+        await database.collections.test.insertOne(record);
+      } catch(e) {
+        error = e;
+      }
+      should.exist(error);
+      database.isDuplicateError(error).should.be.true;
     });
   });
 });
