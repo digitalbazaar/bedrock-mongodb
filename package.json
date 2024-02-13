@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Bedrock mongodb module",
   "main": "./lib/index.js",
+  "license": "BSD-3-Clause",
   "scripts": {
     "lint": "eslint ."
   },
