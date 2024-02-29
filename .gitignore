@@ -11,3 +11,4 @@ TAGS
 coverage
 node_modules
 reports
+package-lock.json
