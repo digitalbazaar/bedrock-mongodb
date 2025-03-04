@@ -1,5 +1,5 @@
 /*!
- * Copyright 2017 - 2024 Digital Bazaar, Inc.
+ * Copyright 2017 - 2025 Digital Bazaar, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -233,7 +233,7 @@ describe('api', function() {
         await database.createIndexes([{
           collection: 'test',
           fields: {id: 1},
-          options: {unique: true, background: false}
+          options: {unique: true}
         }]);
       } catch(e) {
         error = e;
@@ -401,7 +401,7 @@ describe('api', function() {
       await database.createIndexes([{
         collection: 'test',
         fields: {id: 1},
-        options: {unique: true, background: false}
+        options: {unique: true}
       }]);
     });
     it('should have collections', async function() {
