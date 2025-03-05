@@ -57,7 +57,7 @@ describe('api', function() {
       should.exist(result);
       result.should.be.a('string');
     });
-    it('should throw InvalidKey error if key is not a string',
+    it('should throw TypeError error if key is not a string',
       async function() {
         let error;
         let result;
@@ -68,7 +68,7 @@ describe('api', function() {
         }
         should.not.exist(result);
         should.exist(error);
-        error.name.should.equal('InvalidKey');
+        error.name.should.equal('TypeError');
       });
   });
   describe('buildUpdate', function() {
