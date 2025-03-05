@@ -6,6 +6,9 @@
 - **BREAKING**: Use mongodb driver 6.x.
 - **BREAKING**: Update error names to match bedrock best practice.
 
+### Removed
+- **BREAKING**: Remove export of previously deprecated `writeOptions`.
+
 ## 10.2.0 - 2024-02-28
 
 ### Changed
