@@ -240,6 +240,33 @@ describe('api', function() {
       }
       should.not.exist(error);
     });
+    it('should throw DuplicateError on duplicate index', async function() {
+      let error = null;
+      try {
+        await database.openCollections(['test']);
+        await database.createIndexes([{
+          collection: 'test',
+          fields: {id: 1},
+          options: {unique: true, background: false}
+        }]);
+        const record = {
+          id: database.hash('insert-duplicate')
+        };
+        await database.collections.test.insertOne(record);
+        await database.collections.test.insertOne(record);
+      } catch(e) {
+        error = e;
+      }
+      should.exist(error);
+      const assertDbError = database.isDatabaseError(error);
+      assertDbError.should.equal(
+        true,
+        'Expected duplicate error to be a database error');
+      const assertDuplicateError = database.isDuplicateError(error);
+      assertDuplicateError.should.equal(
+        true,
+        'Expected "isDuplicateError()" to be true');
+    });
   });
   describe('createGridFSBucket', function() {
     it('should create a streaming GridFS bucket instance', async function() {
