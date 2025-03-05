@@ -25,7 +25,7 @@ import * as database from '@bedrock/mongodb';
 // custom configuration
 bedrock.config.mongodb.name = 'my_project_dev'; // default: bedrock_dev
 bedrock.config.mongodb.host = 'localhost';      // default: localhost
-bedrock.config.mongodb.protocol = 'mongodb'; // default: mongodb
+bedrock.config.mongodb.protocol = 'mongodb';    // default: mongodb
 bedrock.config.mongodb.port = 27017;            // default: 27017
 bedrock.config.mongodb.username = 'my_project'; // default: bedrock
 bedrock.config.mongodb.password = 'password';   // default: password
@@ -33,13 +33,8 @@ bedrock.config.mongodb.password = 'password';   // default: password
 // the mongodb database 'my_project_dev' and the 'my_project' user will
 // be created on start up following a prompt for the admin user credentials
 
-// alternatively, use `mongodb` URL format:
+// alternatively, use `mongodb` URL format (preferred for deployments):
 bedrock.config.mongodb.url = 'mongodb://localhost:27017/my_project_dev';
-
-// enable local collection if a local database is available
-// the local database has similar options to primary database
-// see lib/config.js for details
-// bedrock.config.mongodb.local.enable = true; // default: false
 
 // open some collections once the database is ready
 bedrock.events.on('bedrock-mongodb.ready', async function() {
@@ -63,8 +58,15 @@ number of connection strings.
 
 [Mongo Node Driver connect docs](https://www.mongodb.com/docs/drivers/node/current/fundamentals/connection/connect/)
 
+You can connect using a url by setting:
+```js
+config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=admin';
+```
+
 You can also connect to access-enabled mongo servers using some small changes to the
-`config.mongodb.connectOptions`:
+`config.mongodb.connectOptions`, however, the `config.mongodb.url` option is highly
+preferable and should cover most use cases:
+
 ```js
 import {config} from '@bedrock/core';
 
@@ -84,24 +86,19 @@ connectOptions.authSource = 'my_provider_auth_db';
 ```
 MongoDB provides [excellent docs on their connection strings](https://docs.mongodb.com/manual/reference/connection-string/)
 
-You can connect using a url by setting:
-```js
-config.mongodb.url = 'mongodb://myDBReader:D1fficultP%40ssw0rd@mongodb0.example.com:27017/?authSource=admin';
-```
-
 ## Requirements
 
 * Linux or Mac OS X (also works on Windows with some coaxing)
-* node.js >= 18.x
-* npm >= 9.x
-* mongodb >= 5.x
+* node.js >= 20.x
+* npm >= 10.x
+* mongodb >= 6.x
 * libkrb5-dev >= 1.x.x
 
 ## Setup
 
 1. Ensure an admin user is set up on mongodb. To do so, follow the instructions
    at [mongodb.org](http://docs.mongodb.org/manual/tutorial/add-user-administrator/)
-   for your version of MongoDB. Version 4.2.x is currently supported.
+   for your version of MongoDB. Version 6.x is currently supported.
 2. [optional] Tweak your project's configuration settings; see
    [Configuration](#configuration) or [Quick Examples](#quick-examples).
 
@@ -120,7 +117,7 @@ an error occurs, the returned promise rejects. If no error occurs, then once
 the promise resolves, the `collections` object will have keys that match the
 collection names and values that are instances of
 [mongodb-native][]
-[Collection](https://mongodb.github.io/node-mongodb-native/6.3/classes/Collection.html).
+[Collection](https://mongodb.github.io/node-mongodb-native/6.14/classes/Collection.html).
 
 ### createGridFSBucket(options)
 
