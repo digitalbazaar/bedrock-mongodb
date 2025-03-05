@@ -517,4 +517,27 @@ describe('api', function() {
       result.length.should.equal(2);
     });
   });
+  describe('isDuplicateError() helper', () => {
+    it('should properly detect a duplicate error', async function() {
+      await database.openCollections(['test']);
+      await database.createIndexes([{
+        collection: 'test',
+        fields: {id: 1},
+        options: {unique: true}
+      }]);
+      const record = {
+        id: 'f466586f-7006-474d-ae44-d16c96a7b5c3'
+      };
+      await database.collections.test.insertOne(record);
+
+      let error = null;
+      try {
+        await database.collections.test.insertOne(record);
+      } catch(e) {
+        error = e;
+      }
+      should.exist(error);
+      database.isDuplicateError(error).should.be.true;
+    });
+  });
 });
