@@ -5,6 +5,13 @@
 ### Changed
 - **BREAKING**: Use mongodb driver 6.x.
 - **BREAKING**: Update error names to match bedrock best practice.
+  - `InvalidKey` error for a bad param type has been changed to `TypeError`.
+  - `DatabaseError` error is now `VersionError` for an invalid version,
+    `DataError` for invalid data, and `OperationError` for some other
+    error with a database operation. This is unrelated to MongoDB errors
+    that are detected using the `isDatabaseError()` helper, which is
+    unchanged and now more clearly decoupled from `DatabaseError`, which
+    is no longer used.
 
 ### Removed
 - **BREAKING**: Remove export of previously deprecated `writeOptions`.
