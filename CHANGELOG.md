@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 11.0.0 - 2025-mm-dd
+## 11.0.0 - 2025-03-07
 
 ### Changed
 - **BREAKING**: Use mongodb driver 6.x.
