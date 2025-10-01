@@ -1,6 +1,6 @@
 # bedrock-mongodb ChangeLog
 
-## 11.0.1 - 2025-10-xx
+## 11.0.1 - 2025-10-01
 
 ### Fixed
 - Coerce non standard version strings when checking mongo server version.
